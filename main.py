@@ -1,30 +1,25 @@
-# import the biblio's and the other files
 import pygame
+from pygame.locals import *
+from sys import exit
 
-# initiate the game 
 pygame.init()
 
-# size of the screen, Width x Height
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 600
+#dimensões cenário
+largura = 1000
+altura = 600
 
-# framerate 
-FPS = 60
+#janela
+tela = pygame.display.set_mode((largura, altura))
+pygame.display.set_caption("arena")
 
-screen = pygame.display.set_mode(((SCREEN_WIDTH, SCREEN_HEIGHT))) # defines the size and inicialize the screen
-pygame.display.set_caption("Swift of Figthye") 
+#acrescentando o background
+fundo = pygame.image.load('cenario2.jpeg')
+tela.blit(fundo, (0,0))
 
-# game loop
-game_is_running = True
-
-while game_is_running:
-    # handle the events during the process of running the game
-    for evento in pygame.event.get():
-        if evento.type == pygame.QUIT:
-            game_is_running = False
-
-    # updates the screen
+#loop 
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
     pygame.display.update()
-
-# end the game
-pygame.quit
