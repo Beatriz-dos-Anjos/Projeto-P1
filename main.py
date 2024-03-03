@@ -36,6 +36,8 @@ Kanye_West = Fighter(2, 700, 310)
 while True:
     relogio.tick(FPS)
     bg()
+    # Interação de Combate
+    Taylor_Swift.combate(tela)
     # Movimento dos personagens
     Taylor_Swift.move(largura, altura)
     Kanye_West.move(largura, altura)
