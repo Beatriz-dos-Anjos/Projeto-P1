@@ -1,25 +1,50 @@
 import pygame
 from pygame.locals import *
 from sys import exit
-
+from fighter import Fighter
 pygame.init()
 
-#dimensões cenário
+# dimensões cenário
 largura = 1000
 altura = 600
 
-#janela
+# janela
 tela = pygame.display.set_mode((largura, altura))
-pygame.display.set_caption("arena")
+pygame.display.set_caption("Swift of Fightwest")
 
-#acrescentando o background
-fundo = pygame.image.load('cenario2.jpeg')
-tela.blit(fundo, (0,0))
+# framerate do jogo
+relogio = pygame.time.Clock()
+FPS = 45
 
-#loop 
+# acrescentando o background
+fundo = pygame.image.load('assets/images/backgrounds/cenario2.jpeg')
+
+# Função para desenhar o background
+# Essa parte do código é essencial para ser chamada no loop, pois sem ela os personagens não se movimentam, a imagem deles é desenhada
+
+
+def bg():
+    escala = pygame.transform.scale(fundo, (largura, altura))
+    tela.blit(escala, (0, 0))
+
+
+# Criando os personagens
+Taylor_Swift = Fighter(1, 200, 310)
+Kanye_West = Fighter(2, 700, 310)
+
+# loop
 while True:
+    relogio.tick(FPS)
+    bg()
+    # Movimento dos personagens
+    Taylor_Swift.move(largura, altura)
+    Kanye_West.move(largura, altura)
+    # Desenhar os personagens
+    Taylor_Swift.draw(tela)
+    Kanye_West.draw(tela)
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             exit()
+
     pygame.display.update()
