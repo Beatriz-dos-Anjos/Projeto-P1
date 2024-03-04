@@ -3,6 +3,7 @@ from pygame.locals import *
 from sys import exit
 from taylor import Taylor_fighter
 from kanye import Kanye_fighter
+from bars import Barra_de_vida
 pygame.init()
 
 # dimensões cenário
@@ -33,6 +34,11 @@ def bg():
 Taylor_Swift = Taylor_fighter(1, 200, 310)
 Kanye_West = Kanye_fighter(2, 700, 310)
 
+
+# criando as barras de vida e as barras de especial dos personagens
+Taylor_Swift_Bars = Barra_de_vida(1, tela)
+Kanye_West_Bars = Barra_de_vida(2, tela)
+
 # loop
 while True:
     relogio.tick(FPS)
@@ -46,6 +52,9 @@ while True:
     # Desenhar os personagens
     Taylor_Swift.draw(tela)
     Kanye_West.draw(tela)
+    # Desenhar as barras de vida
+    Taylor_Swift_Bars.draw()
+    Kanye_West_Bars.draw()
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
