@@ -1,7 +1,8 @@
 import pygame
 from pygame.locals import *
 from sys import exit
-from fighter import Fighter
+from taylor import Taylor_fighter
+from kanye import Kanye_fighter
 pygame.init()
 
 # dimensões cenário
@@ -29,8 +30,8 @@ def bg():
 
 
 # Criando os personagens
-Taylor_Swift = Fighter(1, 200, 310)
-Kanye_West = Fighter(2, 700, 310)
+Taylor_Swift = Taylor_fighter(1, 200, 310)
+Kanye_West = Kanye_fighter(2, 700, 310)
 
 # loop
 while True:
@@ -38,6 +39,7 @@ while True:
     bg()
     # Interação de Combate
     Taylor_Swift.combate(tela)
+    Kanye_West.combate(tela)
     # Movimento dos personagens
     Taylor_Swift.move(largura, altura)
     Kanye_West.move(largura, altura)
