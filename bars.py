@@ -36,6 +36,17 @@ class Barra_de_vida():
         if self.life <= 0:
             self.alive = False
             self.life = 0
+
+        # Atualiza a largura da barra de vida proporcionalmente à vida restante
+        nova_largura = (self.life / 100) * 300
+        self.rect_health.width = nova_largura
+        
+
+        # o que foi feito até agora:
+        # foi criada uma função para identificar colisão no arquivo functions, onde ela recebe como argumentos, a posição do jogador em que o golpe pode estar vindo,
+        # recebe a posição da hitbox, a barra de vida do personagem e quanto o golpe tiraria da vida do personagem se o golpe acertasse
+        # em caso de a função detectar que houve intersecção entre os retângulos, ele ativa a função loose_health
+        # função ainda está em produção 
         
 
 

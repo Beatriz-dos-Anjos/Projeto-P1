@@ -4,6 +4,8 @@ from sys import exit
 from taylor import Taylor_fighter
 from kanye import Kanye_fighter
 from bars import Barra_de_vida
+
+
 pygame.init()
 
 # dimensões cenário
@@ -39,15 +41,21 @@ Kanye_West = Kanye_fighter(2, 700, 310)
 Taylor_Swift_Bars = Barra_de_vida(1, tela)
 Kanye_West_Bars = Barra_de_vida(2, tela)
 
+#
+localizacao_kanye_x, localizacao_kanye_y = 0, 0
+localizacao_taylor_x, localizacao_taylor_y = 0, 0
+
 # loop
 while True:
     relogio.tick(FPS)
     bg()
     # Interação de Combate
-    Taylor_Swift.combate(tela)
-    Kanye_West.combate(tela)
+    Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars)
+    Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars)
     # Movimento dos personagens
-    Taylor_Swift.move(largura, altura)
+    localizacao_taylor_x, localizacao_taylor_y = Taylor_Swift.return_x_y()
+    localizacao_kanye_x, localizacao_kanye_y = Kanye_West.return_x_y() # o problema deve estar aqui
+    Taylor_Swift.move(largura, altura) 
     Kanye_West.move(largura, altura)
     # Desenhar os personagens
     Taylor_Swift.draw(tela)

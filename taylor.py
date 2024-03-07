@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from functions import funcoes
 
 
 class Taylor_fighter():
@@ -9,34 +10,44 @@ class Taylor_fighter():
         self.speed = 0
         self.ground = True
         self.attacking = False
-        self.attacking_type = 0
+        self.attacking_damage = 0
         self.last_attack_time = 0
         self.attacking_coutdown = 2000
         self.facing_left = True if self.player == 2 else False
 
 
-    def combate(self, surface):
+    def combate(self, surface, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente):
+        funcao = funcoes()
         keys = pygame.key.get_pressed()
+
         if self.player == 1:
+
             if keys[pygame.K_e] and self.attacking == False:
                 # tipo do ataque Ataque 1 = Soco
-                self.attacking_type = 1
+                self.attacking_damage = 5
                 # fala para o jogo que o personagem está atacando o golpe 1
                 self.attacking = True
                 # registra o momento em que o personagem deu o último ataque
                 self.last_attack_time = pygame.time.get_ticks()
                 # calcula a área de colisão do soco em relação a posição atual do jogador
                 # verifica se ele está virado para a esquerda ou a direita 
+
                 if self.facing_left == False:
                     area_de_colisao = pygame.Rect(self.rect.x + 80, self.rect.y, 80, 180)
+
                 elif self.facing_left == True:
                     area_de_colisao = pygame.Rect(self.rect.x - 80, self.rect.y, 80, 180)
+
                 # desenha a área de colisão
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
+                posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
+
+                funcao.colisao(area_de_colisao, posicao, self.attacking_damage, barra_de_vida_oponente)
+
         elif self.player == 2:
             if keys[pygame.K_n] and self.attacking == False:
                 # tipo do ataque Ataque 1 = Soco
-                self.attacking_type = 1
+                self.attacking_damage = 5
                 # fala para o jogo que o personagem está atacando o golpe 1
                 self.attacking = True
                 # registra o momento em que o personagem deu o último ataque
@@ -64,10 +75,10 @@ class Taylor_fighter():
         keys = pygame.key.get_pressed()
         if self.player == 1:  # determina se vai ser o jogador 1 ou 2
             if keys[pygame.K_a]:
-                self.facing_left = False
+                self.facing_left = True
                 self.rect.x -= 10
             if keys[pygame.K_d]:
-                self.facing_left = True
+                self.facing_left = False
                 self.rect.x += 10
 
             # Pulo do personagem:: o personagem só pula se ele estiver no chão
@@ -120,6 +131,10 @@ class Taylor_fighter():
             if self.rect.bottom > altura - 110:  # o - 110 está aí porque queremos que quando ele pule ele não passe do chão e não da borda
                 self.ground = True  # para ele poder pular de novo
                 self.rect.bottom = altura - 110
+
+
+    def return_x_y(self):
+        return (self.rect.x, self.rect.y)
 
 
     def draw(self, surface):

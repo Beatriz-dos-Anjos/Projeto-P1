@@ -15,7 +15,7 @@ class Kanye_fighter():
         self.facing_left = True if self.player == 2 else False
 
 
-    def combate(self, surface):
+    def combate(self, surface, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente):
         keys = pygame.key.get_pressed()
         if self.player == 1:
             if keys[pygame.K_r] and self.attacking == False:
@@ -120,6 +120,10 @@ class Kanye_fighter():
             if self.rect.bottom > altura - 110:  # o - 110 está aí porque queremos que quando ele pule ele não passe do chão e não da borda
                 self.ground = True  # para ele poder pular de novo
                 self.rect.bottom = altura - 110
+        
+    
+    def return_x_y(self):
+        return (self.rect.x, self.rect.y)
 
 
     def draw(self, surface):
