@@ -28,6 +28,13 @@ y_retangulo_3 = -1
 objeto_lancado = False # Mesma coisa, um objeto só, pois vão ser armazenados em variáveis
 esperando_intervalo = False  
 prox_objeto = 1  
+default_scale=(75,80)
+grammy= pygame.image.load('git/GRAMMY.jpg')
+grammy_oficial = pygame.transform.scale(grammy,default_scale)
+vma= pygame.image.load('git/VMA.jpeg')
+vma_oficial= pygame.transform.scale(vma,default_scale)
+jordan= pygame.image.load ('git/JORDAN.jpg')
+jordam_oficial= pygame.transform.scale(jordan, default_scale)
 
 while True:
     tela.fill((0, 0, 0))
@@ -58,19 +65,19 @@ while True:
 
         if objeto_lancado:
             if prox_objeto == 1:
-                pygame.draw.rect(tela, (255, 100, 0), (LARGURA / 2, y_retangulo_1, 75, 80))  
+                tela.blit (grammy_oficial, (LARGURA/2, y_retangulo_1)).convert_alpha()
                 y_retangulo_1 += vel_y
                 if y_retangulo_1 > ALTURA:
                     objeto_lancado = False
                     esperando_intervalo = True
             elif prox_objeto == 2:
-                pygame.draw.rect(tela, (0, 255, 0), (LARGURA / 2 + 200, y_retangulo_2, 75, 80))  
+                tela.blit(vma_oficial, (LARGURA/2, y_retangulo_2)).convert_alpha()
                 y_retangulo_2 += vel_y
                 if y_retangulo_2 > ALTURA:
                     objeto_lancado = False
                     esperando_intervalo = True
             elif prox_objeto == 3:
-                pygame.draw.rect(tela, (0, 0, 255), (LARGURA / 2 - 200, y_retangulo_3, 70, 80))  
+                tela.blit(jordam_oficial,(LARGURA/2, y_retangulo_3)).convert_alpha()
                 y_retangulo_3 += vel_y
                 if y_retangulo_3 > ALTURA:
                     objeto_lancado = False
