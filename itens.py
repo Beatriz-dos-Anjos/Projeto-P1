@@ -34,7 +34,7 @@ grammy_oficial = pygame.transform.scale(grammy,default_scale)
 vma= pygame.image.load('git/VMA.jpeg')
 vma_oficial= pygame.transform.scale(vma,default_scale)
 jordan= pygame.image.load ('git/JORDAN.jpg')
-jordam_oficial= pygame.transform.scale(jordan, default_scale)
+jordan_oficial= pygame.transform.scale(jordan, default_scale)
 
 while True:
     tela.fill((0, 0, 0))
@@ -65,19 +65,19 @@ while True:
 
         if objeto_lancado:
             if prox_objeto == 1:
-                tela.blit (grammy_oficial, (LARGURA/2, y_retangulo_1)).convert_alpha()
+                tela.blit (grammy_oficial, (LARGURA/2, y_retangulo_1))#.convert_alpha()
                 y_retangulo_1 += vel_y
                 if y_retangulo_1 > ALTURA:
                     objeto_lancado = False
                     esperando_intervalo = True
             elif prox_objeto == 2:
-                tela.blit(vma_oficial, (LARGURA/2, y_retangulo_2)).convert_alpha()
+                tela.blit(vma_oficial, (LARGURA/2-200, y_retangulo_2))#.convert_alpha()
                 y_retangulo_2 += vel_y
                 if y_retangulo_2 > ALTURA:
                     objeto_lancado = False
                     esperando_intervalo = True
             elif prox_objeto == 3:
-                tela.blit(jordam_oficial,(LARGURA/2, y_retangulo_3)).convert_alpha()
+                tela.blit(jordan_oficial,(LARGURA/2+200, y_retangulo_3))#.convert_alpha()
                 y_retangulo_3 += vel_y
                 if y_retangulo_3 > ALTURA:
                     objeto_lancado = False
