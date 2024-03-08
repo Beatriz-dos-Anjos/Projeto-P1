@@ -1,77 +1,84 @@
 import pygame
-from pygame.locals import QUIT  #verificar se apertou o X
-from sys import exit  # se sim, == saiu
+from pygame.locals import QUIT
 import time
-
-# depois olhar as medidas pra verificar  se o tamanho da janela estabelecida é suficiente
-
-#lembrar que só começará a ser chamada quando a pessoa tiver sido atingida pelo soco.
 
 pygame.init()
 
 pygame.display.set_caption("Aba")
 
-fps_relogio_inicio=pygame.time.get_ticks()
+LARGURA = 1000
+ALTURA = 600
 
-objeto1_lancado=False
+tela = pygame.display.set_mode((LARGURA, ALTURA))
 
-LARGURA=800
-ALTURA=600
+fps_relogio_inicio = pygame.time.get_ticks()
+tempo_inicio_intervalo = 0
 
-x_retangulo_1=LARGURA/2
-y_retangulo_1=0
+vel_y = 0.30   # A velocidade é uma só agora, pra todos os objetos
 
-x_retangulo_2=(LARGURA/2)+200
-y_retangulo_2=0
-objeto2_lancado=False
+duracao_obj_1 = 0
+duracao_obj_2 = 0
+duracao_obj_3 = 0
 
-x_retangulo_3=(LARGURA/2)-200
-y_retangulo_3=0
+y_retangulo_1 = 0
+# Posicionado fora da tela
+y_retangulo_2 = -1  
+y_retangulo_3 = -1  
 
-tela = pygame.display.set_mode((LARGURA,ALTURA))
-vel_y1=0.49
-vel_y2=0.60
-vel_y3=0.63
+objeto_lancado = False # Mesma coisa, um objeto só, pois vão ser armazenados em variáveis
+esperando_intervalo = False  
+prox_objeto = 1  
 
+while True:
+    tela.fill((0, 0, 0))
 
-while True: #DENTRO DO LOOP INFINITO
-    tela.fill((0,0,0))
+    if esperando_intervalo:
+        if pygame.time.get_ticks() - tempo_inicio_intervalo >= 10000:
+            esperando_intervalo = False
+            fps_relogio_inicio = pygame.time.get_ticks()  
+    
+    if not esperando_intervalo:
+        tempo_atual = pygame.time.get_ticks() - fps_relogio_inicio
+        if tempo_atual >= 10000 and not objeto_lancado:
+            if prox_objeto == 1:
+                duracao_obj_1 = pygame.time.get_ticks()
+                objeto_lancado = True
+                y_retangulo_1 = 0
+                prox_objeto = 2
+            elif prox_objeto == 2:
+                duracao_obj_2 = pygame.time.get_ticks()
+                objeto_lancado = True
+                y_retangulo_2 = 0
+                prox_objeto = 3
+            elif prox_objeto == 3:
+                duracao_obj_3 = pygame.time.get_ticks()
+                objeto_lancado = True
+                y_retangulo_3 = 0
+                prox_objeto = 1
+
+        if objeto_lancado:
+            if prox_objeto == 1:
+                pygame.draw.rect(tela, (255, 100, 0), (LARGURA / 2, y_retangulo_1, 75, 80))  
+                y_retangulo_1 += vel_y
+                if y_retangulo_1 > ALTURA:
+                    objeto_lancado = False
+                    esperando_intervalo = True
+            elif prox_objeto == 2:
+                pygame.draw.rect(tela, (0, 255, 0), (LARGURA / 2 + 200, y_retangulo_2, 75, 80))  
+                y_retangulo_2 += vel_y
+                if y_retangulo_2 > ALTURA:
+                    objeto_lancado = False
+                    esperando_intervalo = True
+            elif prox_objeto == 3:
+                pygame.draw.rect(tela, (0, 0, 255), (LARGURA / 2 - 200, y_retangulo_3, 70, 80))  
+                y_retangulo_3 += vel_y
+                if y_retangulo_3 > ALTURA:
+                    objeto_lancado = False
+                    esperando_intervalo = True
+
+    pygame.display.update()  
+
     for event in pygame.event.get():
-        if event.type== QUIT :
+        if event.type == QUIT:
             pygame.quit()
             exit()
-
-    trofeu_1= pygame.draw.rect(tela,(255,100,0),(x_retangulo_1,y_retangulo_1,75,80))  #GRAMMY
-    objeto1_lancado=True
-
-
-    fps_relogio_meio=pygame.time.get_ticks()
-    diferenca_ticks= fps_relogio_meio-fps_relogio_inicio
-
-    if diferenca_ticks>=5000 and objeto1_lancado==True:  #VMA
-        trofeu_2=pygame.draw.rect(tela,(0,255,0),(x_retangulo_2,y_retangulo_2,75,80))
-        objeto2_lancado=True
-    
-        diferenca_ticks_2=pygame.time.get_ticks()-diferenca_ticks
-            
-        if diferenca_ticks_2>=20 and objeto2_lancado==True:
-            trofeu_3=pygame.draw.rect(tela,(0,0,255),(x_retangulo_3,y_retangulo_3,70,80))
-            y_retangulo_3=y_retangulo_3+vel_y3
-
-
-        
-    y_retangulo_1=y_retangulo_1+vel_y1 
-    y_retangulo_2=y_retangulo_2+vel_y2
-
-
-
-    if y_retangulo_1>ALTURA:
-        y_retangulo_1=0
-
-    if y_retangulo_2>ALTURA:
-        y_retangulo_2=0
-    
-    if y_retangulo_3>ALTURA:
-        y_retangulo_3=0
-    
-    pygame.display.update()
