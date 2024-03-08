@@ -6,8 +6,8 @@ class Barra_de_vida():
     def __init__(self, player, surface):
         self.player = player
         self.surface = surface
-        self.rect_health = pygame.Rect(100, 70, 300, 33) if self.player == 1 else pygame.Rect(600, 40, 300, 33)
-        self.rect_special = pygame.Rect(100, 108, 230, 17) if self.player == 1 else pygame.Rect(670, 78, 230, 17)
+        self.rect_health = pygame.Rect(100, 40, 300, 33) if self.player == 1 else pygame.Rect(600, 40, 300, 33)
+        self.rect_special = pygame.Rect(100, 78, 230, 17) if self.player == 1 else pygame.Rect(670, 78, 230, 17)
         self.life = 100
         self.alive = True
         self.special_attack = 0
@@ -39,15 +39,12 @@ class Barra_de_vida():
 
         # Atualiza a largura da barra de vida proporcionalmente à vida restante
         nova_largura = (self.life / 100) * 300
-        self.rect_health.width = nova_largura
-        
-
-        # o que foi feito até agora:
-        # foi criada uma função para identificar colisão no arquivo functions, onde ela recebe como argumentos, a posição do jogador em que o golpe pode estar vindo,
-        # recebe a posição da hitbox, a barra de vida do personagem e quanto o golpe tiraria da vida do personagem se o golpe acertasse
-        # em caso de a função detectar que houve intersecção entre os retângulos, ele ativa a função loose_health
-        # função ainda está em produção 
-        
+        if self.player == 1:
+            self.rect_health.width = nova_largura 
+        elif self.player == 2:
+            largura = self.rect_health.width - nova_largura
+            self.rect_health.width = nova_largura
+            self.rect_health.x = self.rect_health.x + largura     
 
 
     # função para a vida do personagem e a barra da vida ser atualizada
