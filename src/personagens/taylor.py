@@ -1,9 +1,9 @@
 import pygame
 from pygame.locals import *
-from functions import combate, move
+from utilities.functions import combate, move
 
 
-class Kanye_fighter():
+class Taylor_fighter():
     def __init__(self, player, x, y):
         self.player = player
         self.rect = pygame.Rect(x, y, 80, 180)
