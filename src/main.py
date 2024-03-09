@@ -3,7 +3,7 @@ from pygame.locals import *
 from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
-from src.utilities.bars import Barra_de_vida
+from utilities.bars import Barra_de_vida
 
 
 pygame.init()
