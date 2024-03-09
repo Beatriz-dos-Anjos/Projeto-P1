@@ -33,11 +33,11 @@ objeto_lancado = False # Mesma coisa, um objeto só, pois vão ser armazenados e
 esperando_intervalo = False  
 prox_objeto = 1  
 default_scale=(75,80)
-grammy= pygame.image.load('git/GRAMMY.jpg')
+grammy= pygame.image.load('git/grammy.png')
 grammy_oficial = pygame.transform.scale(grammy,default_scale)
-vma= pygame.image.load('git/VMA.jpeg')
+vma= pygame.image.load('git/vma.png')
 vma_oficial= pygame.transform.scale(vma,default_scale)
-jordan= pygame.image.load ('git/JORDAN.jpg')
+jordan= pygame.image.load ('git/jordan.png')
 jordan_oficial= pygame.transform.scale(jordan, default_scale)
 
 while True:
