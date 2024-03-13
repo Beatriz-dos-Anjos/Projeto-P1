@@ -9,8 +9,8 @@ class Barra_de_vida():
         self.rect_health = pygame.Rect(100, 40, 300, 33) if self.player == 1 else pygame.Rect(600, 40, 300, 33)
         self.rect_special = pygame.Rect(100, 78, 230, 17) if self.player == 1 else pygame.Rect(670, 78, 230, 17)
         self.life = 100
+        self.special_attack = 100
         self.alive = True
-        self.special_attack = 0
 
 
 
@@ -52,11 +52,20 @@ class Barra_de_vida():
         # função especificamente para interagir com o gramy e o vma
         pass
 
+    
+    # função para conferir se é possível realizar o especial
+    def can_use_special(self):
+
+        if self.special_attack == 100:
+            return True
+        
+        return False
+    
 
     # função para a barra do especial ser atualizada 
-    def loose_special(self, quantidade):
-        # função para usar quando o especial for utilizado para zerar a barra de especial
-        pass
+    def loose_special(self):
+        self.special_attack = 0
+        self.rect_special.width = 0
 
     # função para a barra do especial ser atualizada 
     def gain_special(self, quantidade):

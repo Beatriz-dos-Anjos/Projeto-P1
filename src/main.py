@@ -44,25 +44,34 @@ Kanye_West_Bars = Barra_de_vida(2, tela)
 #
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
+hit_box_taylor = 0
+hit_box_kanye = 0
 
 # loop
 while True:
     relogio.tick(FPS)
     bg()
+
     # Interação de Combate
-    Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars)
-    Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars)
+    Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars, Taylor_Swift_Bars)
+    Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars, Kanye_West_Bars)
+
     # Movimento dos personagens
     localizacao_taylor_x, localizacao_taylor_y = Taylor_Swift.return_x_y()
     localizacao_kanye_x, localizacao_kanye_y = Kanye_West.return_x_y() # o problema deve estar aqui
-    Taylor_Swift.move(largura, altura) 
-    Kanye_West.move(largura, altura)
+    hit_box_taylor = Taylor_Swift.return_rect()
+    hit_box_kanye = Kanye_West.return_rect()
+    Taylor_Swift.move(largura, altura, hit_box_kanye) 
+    Kanye_West.move(largura, altura, hit_box_taylor)
+
     # Desenhar os personagens
     Taylor_Swift.draw(tela)
     Kanye_West.draw(tela)
+
     # Desenhar as barras de vida
     Taylor_Swift_Bars.draw()
     Kanye_West_Bars.draw()
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
