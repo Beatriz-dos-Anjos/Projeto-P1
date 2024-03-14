@@ -186,77 +186,44 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
         return last_attack_time
-def colisao_objetos_pessoas (x_ret_1,x_ret_2,x_ret_3,y_retangulo_1,y_retangulo_2,y_retangulo_3,posiscao_oponente_x,posicao_oponente_y,barra_de_vida,hitbox_obj_1,hitbox_obj_2,hitbox_obj_3,surface,player,rect.x,rect.y):
-    qtd_ganha=5
-    quantidade=-15
-    colisao_obj_p=False
-    if player==1:
-        #oponente
+def colisao_objetos_pessoas(x_ret_1, x_ret_2, x_ret_3, y_retangulo_1, y_retangulo_2, y_retangulo_3, posiscao_oponente_x, posicao_oponente_y, barra_de_vida, hitbox_obj_1, hitbox_obj_2, hitbox_obj_3, surface, player, rect_x, rect_y):
+    qtd_ganha = 5
+    qtd_perde = -15
+    colisao_obj_p = False
+    
+    if player == 1 or player == 2:
         if hitbox_obj_1.colliderect(posicao_oponente_y) and hitbox_obj_1.colliderect(posiscao_oponente_x):  #grammy
             area_colisao=pygame.Rect(x_ret_1,y_retangulo_1,80,100)
             barra_de_vida.gaining_health(qtd_ganha)
-            colisao_obj_p=True #adiciona vida
+            colisao_obj_p = True #adiciona vida
         if hitbox_obj_2.colliderect(posicao_oponente_y) and hitbox_obj_2.colliderect(posiscao_oponente_x): #vma
             area_colisao=pygame.Rect(x_ret_2,y_retangulo_2,80,100)
             barra_de_vida.gaining_health(qtd_ganha) #adiciona vida
-            colisao_obj_p=True
+            colisao_obj_p = True
         if hitbox_obj_3.colliderect(posicao_oponente_y) and hitbox_obj_3.colliderect(posiscao_oponente_x): #jordan
-            area_colisao=pygame.Rect(x_ret_3,y_retangulo_3,80,100) 
-            barra_de_vida.loose_health(quantidade) #remove vida , função já feita
-            colisao_obj_p=True
+            area_colisao = pygame.Rect(x_ret_3,y_retangulo_3,80,100) 
+            barra_de_vida.loose_health(qtd_perde) #remove vida , função já feita
+            colisao_obj_p = True
 
         pygame.draw.rect(surface,(0,255,0),area_colisao)
 
-        #ele
-
-        if hitbox_obj_1.colliderect(rect.x) and hitbox_obj_1.colliderect(rect.y):  #grammy
+        if hitbox_obj_1.colliderect(rect_x) and hitbox_obj_1.colliderect(rect_y):  #grammy
             area_colisao=pygame.Rect(x_ret_1,y_retangulo_1,80,100)
             barra_de_vida.gaining_health(qtd_ganha)
             colisao_obj_p=True
              #adiciona vida
-        if hitbox_obj_2.colliderect(rect.x) and hitbox_obj_2.colliderect(rect.y): #vma
+        if hitbox_obj_2.colliderect(rect_x) and hitbox_obj_2.colliderect(rect_y): #vma
             area_colisao=pygame.Rect(x_ret_2,y_retangulo_2,80,100)
             barra_de_vida.gaining_health(qtd_ganha) #adiciona vida
             colisao_obj_p=True
-        if hitbox_obj_3.colliderect(rect.x) and hitbox_obj_3.colliderect(rect.y): #jordan
+        if hitbox_obj_3.colliderect(rect_x) and hitbox_obj_3.colliderect(rect_y): #jordan
             area_colisao=pygame.Rect(x_ret_3,y_retangulo_3,80,100) 
-            barra_de_vida.loose_health(quantidade) #remove vida , função já feita
+            barra_de_vida.loose_health(qtd_perde) #remove vida , função já feita
             colisao_obj_p=True
-        pygame.draw.rect(surface,(0,255,0),area_colisao)
-        
-    if player==2:
-        #oponente
-        if hitbox_obj_1.colliderect(posicao_oponente_y) and hitbox_obj_1.colliderect(posiscao_oponente_x):  #grammy
-            area_colisao=pygame.Rect(x_ret_1,y_retangulo_1,80,100)
-            barra_de_vida.gaining_health(qtd_ganha)
-            colisao_obj_p=True 
-        if hitbox_obj_2.colliderect(posicao_oponente_y) and hitbox_obj_2.colliderect(posiscao_oponente_x): #vma
-            area_colisao=pygame.Rect(x_ret_2,y_retangulo_2,80,100)
-            colisao_obj_p=True
-            barra_de_vida.gaining_health(qtd_ganha) #adiciona vida
-        if hitbox_obj_3.colliderect(posicao_oponente_y) and hitbox_obj_3.colliderect(posiscao_oponente_x): #jordan
-            area_colisao=pygame.Rect(x_ret_3,y_retangulo_3,80,100) 
-            barra_de_vida.loose_health(quantidade) #remove vida , função já feita
-            colisao_obj_p=True
-            pygame.draw.rect(surface,(0,255,0),area_colisao)
 
-        #ele
-
-        if hitbox_obj_1.colliderect(rect.x) and hitbox_obj_1.colliderect(rect.y):  #grammy
-            area_colisao=pygame.Rect(x_ret_1,y_retangulo_1,80,100)
-            barra_de_vida.gaining_health(qtd_ganha)
-            colisao_obj_p=True
-            #adiciona vida
-        if hitbox_obj_2.colliderect(rect.x) and hitbox_obj_2.colliderect(rect.y): #vma
-            area_colisao=pygame.Rect(x_ret_2,y_retangulo_2,80,100)
-            barra_de_vida.gaining_health(qtd_ganha) #adiciona vida
-            colisao_obj_p=True
-        if hitbox_obj_3.colliderect(rect.x) and hitbox_obj_3.colliderect(rect.y): #jordan
-            area_colisao=pygame.Rect(x_ret_3,y_retangulo_3,80,100) 
-            barra_de_vida.loose_health(quantidade) #remove vida , função já feita
-            colisao_obj_p=True
         pygame.draw.rect(surface,(0,255,0),area_colisao)   
         return colisao_obj_p
+
 
 def gaining_health(self,qtd_ganha):  #função criada pra ganhar vida
     self.life +=qtd_ganha
