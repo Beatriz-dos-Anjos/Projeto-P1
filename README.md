@@ -1,5 +1,6 @@
 <div style="background-color: rgba(240, 240, 240, 0.8); padding: 20px;">
-   <# Swift Of Fightwesr
+
+# Swift Of Fightwest
 
 # O Jogo:
 
@@ -22,5 +23,9 @@ Arquitetura de pastas do projeto
 
 ## Conceitos utilizados:
 
-## Desafios e Erros:>
+## Desafios e Erros:
+
+## A Equipe:
+
+O jogo foi desenvolvido para a cadeira de P1...
 </div>

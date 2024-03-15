@@ -1,6 +1,8 @@
 import pygame
 from pygame.locals import *
-from utilities.functions import combate, move
+from utilities.fight_commands import combate
+from utilities.movimentacao import move
+#from utilities.animations_kanye import
 
 
 class Kanye_fighter():
