@@ -18,7 +18,7 @@ pygame.display.set_caption("Swift of Fightwest")
 
 # framerate do jogo
 relogio = pygame.time.Clock()
-FPS = 45
+FPS = 60
 
 # acrescentando o background
 fundo = pygame.image.load('assets/images/backgrounds/cenario2.jpeg')

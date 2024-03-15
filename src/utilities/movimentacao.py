@@ -4,7 +4,7 @@ from utilities.colisoes import is_colliding_left # Não está pegando sem o util
 
 
 # define a função de movimento para ambos os personagens
-def move(rect, player, facing_left, ground, speed, largura, altura, inimigo):
+def move(rect, player, facing_left, ground, speed, largura, altura, inimigo, movendo_ou_nao):
     gravidade = 2
 
     colliding_right_or_left = is_colliding_left(rect, inimigo) 
@@ -19,12 +19,14 @@ def move(rect, player, facing_left, ground, speed, largura, altura, inimigo):
 
         if keys[pygame.K_a] and (colliding_right_or_left == None or colliding_right_or_left == False):  # verifica se a tecla pressionada foi A, se for o player 1 movimenta para a esquerda e atualiza a váriavel que indica o sentido do personagem
             facing_left = True 
+            movendo_ou_nao = True
 
             rect.x -= 10
 
         # mesma coisa que a condição acima, mas para verificar se o personagem está andando para a direita
         if keys[pygame.K_d] and (colliding_right_or_left == None or colliding_right_or_left == True):
             facing_left = False
+            movendo_ou_nao = True
 
             rect.x += 10
             
@@ -38,11 +40,13 @@ def move(rect, player, facing_left, ground, speed, largura, altura, inimigo):
        
         if keys[pygame.K_LEFT] and (colliding_right_or_left == None or colliding_right_or_left == False):
             facing_left = True
+            movendo_ou_nao = True
             
             rect.x -= 10
 
         if keys[pygame.K_RIGHT] and (colliding_right_or_left == None or colliding_right_or_left == True):
             facing_left = False
+            movendo_ou_nao = True
 
             rect.x += 10
 
@@ -68,5 +72,11 @@ def move(rect, player, facing_left, ground, speed, largura, altura, inimigo):
     if rect.bottom > altura - 110:  # o - 110 está aí porque queremos que quando ele pule ele não passe do chão e não da borda
         ground = True  # para ele poder pular de novo
         rect.bottom = altura - 110
+
+    pressed_keys = [pygame.K_a, pygame.K_d] if player == 1 else [pygame.K_LEFT, pygame.K_RIGHT]
+    is_any_movement_key_pressed = any(keys[key] for key in pressed_keys)
+
+    # Define movendo_ou_nao com base nas condições anteriores
+    movendo_ou_nao = is_any_movement_key_pressed
     
-    return facing_left, ground, speed
+    return facing_left, ground, speed, movendo_ou_nao

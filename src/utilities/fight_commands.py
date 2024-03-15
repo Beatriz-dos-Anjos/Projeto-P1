@@ -3,7 +3,7 @@ from pygame.locals import *
 from utilities.colisoes import colisao # Não está pegando sem o utilities
 
 
-def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player):
+def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player, tipo_de_ataque):
         attacking_damage = 0
         last_attack_time = 0
         
@@ -26,6 +26,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao) # desenha a hitbox do ataque
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)  # desenha a hit box do personagem inimigo 
+                tipo_de_ataque = 1 # vai servir para a animação, 1 == Soco
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)  # invoca a função para verificar se houve colisão entre o golpe e o inimigo 
             
@@ -43,6 +44,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
+                tipo_de_ataque = 2 # vai servir para a animação, 2 == chute
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
@@ -61,6 +63,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
+                tipo_de_ataque = 3 # vai servir para a animação, 3 == especial
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
@@ -81,6 +84,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
+                tipo_de_ataque = 1 # vai servir para a animação, 1 == Soco
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
@@ -98,6 +102,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
+                tipo_de_ataque = 2 # vai servir para a animação, 2 == chute
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
@@ -117,7 +122,9 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
+                tipo_de_ataque = 3 # vai servir para a animação, 3 == especial
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
-        return last_attack_time
+
+        return last_attack_time, tipo_de_ataque
