@@ -226,4 +226,4 @@ def colisao_objetos_pessoas(x_ret_1, x_ret_2, x_ret_3, y_retangulo_1, y_retangul
 
 
 def gaining_health(self,qtd_ganha):  #função criada pra ganhar vida
-    self.life +=qtd_ganha
+    self.life += qtd_ganha
