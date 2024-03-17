@@ -7,6 +7,7 @@ from utilities.bars import Barra_de_vida
 from utilities.telainicial import *
 
 
+
 pygame.init()
 
 # dimensões cenário
@@ -46,18 +47,24 @@ Kanye_West_Bars = Barra_de_vida(2, tela)
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
 
-cena = "menu"
+logo = Logo()
+start = Start()
+sprites.add(logo)
+sprites.add(start)
 
+
+cena = "menu"
 # loop
 while True:
-    #relogio.tick(FPS)
+    relogio.tick(FPS)
     if cena == "menu":
-        for event.type in pygame.event.get():
+        for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
                 exit()
-            if event.type == pygame.KEYDOWN:
-                cena = 'jogo'
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    cena = 'jogo'
         
         tela.blit(tela_inicial, (0,0))
 

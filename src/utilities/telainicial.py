@@ -90,27 +90,6 @@ class Start(pygame.sprite.Sprite):
 
 sprites = pygame.sprite.Group() 
 
-logo = Logo()
-start = Start()
-sprites.add(logo)
-sprites.add(start)
-
-while True:
-    relogio.tick(FPS)
-
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.quit()
-            exit()
-    
-
-    tela.blit(tela_inicial, (0,0))
-
-
-    sprites.draw(tela)
-    sprites.update()
-
-    pygame.display.flip()
 
 
 
