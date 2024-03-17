@@ -36,7 +36,7 @@ jump_size_of_frame_y = 184
 jump = formar_lista_animacao(
     jump_spritesheet, jump_number_frames, jump_size_of_frame_x, jump_size_of_frame_y)
 
-
+"""
 # Para as sprites do punch:
 punch_spritesheet = pygame.image.load(
     "assets/images/personagens/taylor_sprites/punch.png")
@@ -46,7 +46,6 @@ punch_size_of_frame_y = 125
 
 punch = formar_lista_animacao(
     punch_spritesheet, punch_number_frames, punch_size_of_frame_x, punch_size_of_frame_y)
-
 
 # Para as sprites do kick:
 kick_spritesheet = pygame.image.load(
@@ -60,3 +59,4 @@ kick = formar_lista_animacao(
 
 
 # special = pygame.image.load("assets/images/personagens/kanye_sprites/special.png")
+"""
