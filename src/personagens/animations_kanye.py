@@ -10,7 +10,9 @@ idle_number_frames = 12 # quantidade de frames
 idle_size_of_frame_x = 77 # tamanho horizontal de cada um dos frames
 idle_size_of_frame_y = 122 # tamanho vertical de cada um dos frames
 
-idle = formar_lista_animacao(idle_spritesheet, idle_number_frames, idle_size_of_frame_x, idle_size_of_frame_y)
+idle_p1 = formar_lista_animacao(idle_spritesheet, idle_number_frames, idle_size_of_frame_x, idle_size_of_frame_y, 1)
+idle_p2 = formar_lista_animacao(idle_spritesheet, idle_number_frames, idle_size_of_frame_x, idle_size_of_frame_y, 2)
+
 
 
 # Para as sprites do walk:
@@ -19,7 +21,8 @@ walk_number_frames = 8
 walk_size_of_frame_x = 77
 walk_size_of_frame_y = 120
 
-walk = formar_lista_animacao(walk_spritesheet, walk_number_frames, walk_size_of_frame_x, walk_size_of_frame_y)
+walk_p1 = formar_lista_animacao(walk_spritesheet, walk_number_frames, walk_size_of_frame_x, walk_size_of_frame_y, 1)
+walk_p2 = formar_lista_animacao(walk_spritesheet, walk_number_frames, walk_size_of_frame_x, walk_size_of_frame_y, 2)
 
 
 # Para as sprites do jump:
@@ -28,7 +31,8 @@ jump_number_frames = 17
 jump_size_of_frame_x = 115
 jump_size_of_frame_y = 184
 
-jump = formar_lista_animacao(jump_spritesheet, jump_number_frames, jump_size_of_frame_x, jump_size_of_frame_y)
+jump_p1 = formar_lista_animacao(jump_spritesheet, jump_number_frames, jump_size_of_frame_x, jump_size_of_frame_y, 1)
+jump_p2 = formar_lista_animacao(jump_spritesheet, jump_number_frames, jump_size_of_frame_x, jump_size_of_frame_y, 2)
 
 
 # Para as sprites do punch:
@@ -37,7 +41,8 @@ punch_number_frames = 9
 punch_size_of_frame_x = 149
 punch_size_of_frame_y = 125
 
-punch = formar_lista_animacao(punch_spritesheet, punch_number_frames, punch_size_of_frame_x, punch_size_of_frame_y)
+punch_p1 = formar_lista_animacao(punch_spritesheet, punch_number_frames, punch_size_of_frame_x, punch_size_of_frame_y, 1)
+punch_p2 = formar_lista_animacao(punch_spritesheet, punch_number_frames, punch_size_of_frame_x, punch_size_of_frame_y, 2)
 
 
 # Para as sprites do kick:
@@ -46,7 +51,8 @@ kick_number_frames = 10
 kick_size_of_frame_x = 149
 kick_size_of_frame_y = 125
 
-kick = formar_lista_animacao(kick_spritesheet, kick_number_frames, kick_size_of_frame_x, kick_size_of_frame_y)
+kick_p1 = formar_lista_animacao(kick_spritesheet, kick_number_frames, kick_size_of_frame_x, kick_size_of_frame_y, 1)
+kick_p2 = formar_lista_animacao(kick_spritesheet, kick_number_frames, kick_size_of_frame_x, kick_size_of_frame_y, 2)
 
 
 #special = pygame.image.load("assets/images/personagens/kanye_sprites/special.png")

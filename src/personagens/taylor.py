@@ -21,6 +21,9 @@ class Taylor_fighter():
         self.speed = 0
         self.ground = True
         self.last_attack_time = 0
+        self.is_moving = False
+        self.attacking_type = 0
+        self.block = False
         self.facing_left = True if self.player == 2 else False
 
     def combate(self, surface, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player):
@@ -30,10 +33,15 @@ class Taylor_fighter():
         if pygame.time.get_ticks() - self.last_attack_time >= attacking_countdown:
             self.last_attack_time, self.attacking_type = combate(
                 self.rect, self.player, surface, self.facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player, self.attacking_type)
+        if pygame.time.get_ticks() - self.last_attack_time >= attacking_countdown: # confere se o tempo de execução do jogo subtraindo o tempo do último ataque realizado é maior ou igual ao countdown especulado
+            self.last_attack_time, self.attacking_type = combate(self.rect, self.player, surface, self.facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player) 
+            
 
     def move(self, largura, altura, inimigo):
         self.facing_left, self.ground, self.speed, self.is_moving = move(
             self.rect, self.player, self.facing_left, self.ground, self.speed, largura, altura, inimigo, self.is_moving)
+        self.ground, self.speed, self.is_moving = move(self.rect, self.player, self.ground, self.speed, largura, altura, inimigo, self.is_moving, self.block)
+
 
     def return_x_y(self):
         return (self.rect.x, self.rect.y)
