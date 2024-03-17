@@ -3,9 +3,10 @@ from pygame.locals import *
 from utilities.colisoes import colisao # Não está pegando sem o utilities
 
 
-def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player, tipo_de_ataque):
+def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player):
         attacking_damage = 0
-        last_attack_time = 0
+        attacked_or_not = False
+        tipo_de_ataque = None
         
         keys = pygame.key.get_pressed()
 
@@ -15,32 +16,23 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             if keys[pygame.K_e]:
 
                 attacking_damage = 5  # Quantidade de dano
-                last_attack_time = pygame.time.get_ticks()  # registra o momento em que o personagem deu o último ataque
+                attacked_or_not = True # variável para se ele atacou ou não
 
-                # verifica se ele está virado para a esquerda ou a direita 
-                if facing_left == False:
-                    area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)  #área de colisão
-
-                elif facing_left == True:
-                    area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
+                area_de_colisao = pygame.Rect(rect.x + 165, rect.y, 80, 100)  #área de colisão
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao) # desenha a hitbox do ataque
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)  # desenha a hit box do personagem inimigo 
                 tipo_de_ataque = 1 # vai servir para a animação, 1 == Soco
 
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)  # invoca a função para verificar se houve colisão entre o golpe e o inimigo 
-            
+
             # ATAQUE DE CHUTE
             if keys[pygame.K_r]:
 
                 attacking_damage = 7  
-                last_attack_time = pygame.time.get_ticks() 
+                attacked_or_not = True
                 
-                if facing_left == False:
-                    area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
-
-                elif facing_left == True:
-                    area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
+                area_de_colisao = pygame.Rect(rect.x + 140, rect.y + 60, 80, 150)
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
@@ -52,14 +44,10 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             if keys[pygame.K_t] and barra_de_vida_player.can_use_special() == True:
 
                 attacking_damage = 33
-                last_attack_time = pygame.time.get_ticks() 
                 barra_de_vida_player.loose_special()
+                attacked_or_not = True
                 
-                if facing_left == False:
-                    area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
-
-                elif facing_left == True:
-                    area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
+                area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
@@ -74,13 +62,9 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             if keys[pygame.K_b]:
 
                 attacking_damage = 5
-                last_attack_time = pygame.time.get_ticks()
+                attacked_or_not = True
 
-                if facing_left == False:
-                    area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
-
-                elif facing_left == True:
-                    area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
+                area_de_colisao = pygame.Rect(rect.x - 165, rect.y, 80, 100)  #área de colisão
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
@@ -91,14 +75,10 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             # ATAQUE DE CHUTE
             if keys[pygame.K_n]:
 
-                attacking_damage = 7  
-                last_attack_time = pygame.time.get_ticks() 
+                attacking_damage = 7 
+                attacked_or_not = True
                 
-                if facing_left == False:
-                    area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
-
-                elif facing_left == True:
-                    area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
+                area_de_colisao = pygame.Rect(rect.x - 140, rect.y + 60, 80, 150)
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
@@ -110,15 +90,10 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             if keys[pygame.K_m] and barra_de_vida_player.can_use_special() == True:
 
                 attacking_damage = 33 
-                last_attack_time = pygame.time.get_ticks() 
                 barra_de_vida_player.loose_special()
-
+                attacked_or_not = True
                 
-                if facing_left == False:
-                    area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
-
-                elif facing_left == True:
-                    area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
+                area_de_colisao = pygame.Rect(rect.x - 80, rect.y, 80, 180)
 
                 pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
                 posicao = pygame.Rect(posicao_oponente_x, posicao_oponente_y, 80, 180)
@@ -127,4 +102,4 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
 
-        return last_attack_time, tipo_de_ataque
+        return attacked_or_not, tipo_de_ataque

@@ -18,7 +18,7 @@ pygame.display.set_caption("Swift of Fightwest")
 
 # framerate do jogo
 relogio = pygame.time.Clock()
-FPS = 60
+FPS = 45
 
 # acrescentando o background
 fundo = pygame.image.load('assets/images/backgrounds/cenario2.jpeg')
@@ -33,7 +33,7 @@ def bg():
 
 
 # Criando os personagens
-Taylor_Swift = Taylor_fighter(1, 200, 310)
+Taylor_Swift = Kanye_fighter(1, 200, 310) # alterei para executar teste
 Kanye_West = Kanye_fighter(2, 700, 310)
 
 
@@ -65,9 +65,8 @@ while True:
     Kanye_West.move(largura, altura, hit_box_taylor)
 
     # Desenhar os personagens
-    Taylor_Swift.draw(tela)
     Kanye_West.draw(tela)
-
+    Taylor_Swift.draw(tela)
     # Desenhar as barras de vida
     Taylor_Swift_Bars.draw()
     Kanye_West_Bars.draw()

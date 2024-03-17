@@ -44,9 +44,15 @@ class Barra_de_vida():
         elif self.player == 2:
             largura = self.rect_health.width - nova_largura
             self.rect_health.width = nova_largura
-            self.rect_health.x = self.rect_health.x + largura     
+            self.rect_health.x = self.rect_health.x + largura    
 
+        return None 
 
+    
+    def get_life(self):
+        return self.life
+    
+        
     # função para a vida do personagem e a barra da vida ser atualizada
     def gain_health(self, quantidade):
         # função especificamente para interagir com o gramy e o vma
