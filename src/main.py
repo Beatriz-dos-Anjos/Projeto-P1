@@ -5,7 +5,6 @@ from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
 from utilities.bars import Barra_de_vida
 from utilities.telainicial import *
-from utilities.telainicial import *
 
 
 pygame.init()
