@@ -161,4 +161,4 @@ while True:
                 pygame.quit()
                 exit()
 
-    pygame.display.flip()  # ESTUDAR MUDAR PARA O FLIP 
+    pygame.display.flip()  # ESTUDAR MUDAR PARA O FLIP  
