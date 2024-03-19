@@ -4,6 +4,10 @@ from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
 from utilities.bars import Barra_de_vida
+from utilities.grammy import Grammy
+from utilities.vma import Vma
+from utilities.jordan import Jordan
+
 
 pygame.init()
 
@@ -40,6 +44,11 @@ Kanye_West = Kanye_fighter(2, 700, 310)
 Taylor_Swift_Bars = Barra_de_vida(1, tela)
 Kanye_West_Bars = Barra_de_vida(2, tela)
 
+# criando objetos
+grammy = Grammy(tela, 750, 0, Taylor_Swift_Bars, Kanye_West_Bars)
+vma = Vma(tela, 500, 0, Taylor_Swift_Bars, Kanye_West_Bars)
+jordan = Jordan(tela, 250, 0, Taylor_Swift_Bars, Kanye_West_Bars)
+
 #
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
@@ -62,6 +71,7 @@ while True:
     # Desenhar as barras de vida
     Taylor_Swift_Bars.draw()
     Kanye_West_Bars.draw()
+    # De
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
