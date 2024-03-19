@@ -3,8 +3,7 @@ from pygame.locals import *
 from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
-from src.utilities.bars import Barra_de_vida
-
+from utilities.bars import Barra_de_vida
 
 pygame.init()
 
@@ -21,7 +20,7 @@ relogio = pygame.time.Clock()
 FPS = 45
 
 # acrescentando o background
-fundo = pygame.image.load('assets/images/backgrounds/cenario2.jpeg')
+fundo = pygame.image.load('assets\images/background/cenario2.jpeg')
 
 # Função para desenhar o background
 # Essa parte do código é essencial para ser chamada no loop, pois sem ela os personagens não se movimentam, a imagem deles é desenhada
