@@ -2,7 +2,7 @@
 
 # Swift Of Fightwest 🎤🥋
 ### Nosso time 🚀 <br>
-[link do perfil do github-(login)](URL_do_Link) <br>
+[Luiza Trigueiro-(ltrb)](https://github.com/luizatrigueiro) <br>
 
 [link do perfil do github-(login)](URL_do_Link) <br>
 
