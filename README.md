@@ -77,8 +77,7 @@ Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do 
 
 ## A Equipe:
 ## Galeria do jogo
-![Descrição da imagem](assets/images/galeria_do_jogo/tela inicial)
+![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20192044.png)
 
-O jogo foi desenvolvi
-do para a cadeira de P1...
+O jogo foi desenvolvido para a cadeira de P1...
 </div>
