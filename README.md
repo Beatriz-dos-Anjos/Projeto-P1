@@ -76,6 +76,7 @@ Os principais **desafios** foram a escolha das sprites, aprender a usar o GitHub
 Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do processo, afetando o nosso tempo nas partes finais e mais complicadas do projeto. outro erro foi não ter dado prioridade suficiente para a parte dos objetos coletáveis. 
 
 ## A Equipe:
-
+## Galeria do jogo
+![Tela inicial](imagem.png)
 O jogo foi desenvolvido para a cadeira de P1...
 </div>
