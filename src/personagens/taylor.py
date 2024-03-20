@@ -30,3 +30,6 @@ class Taylor_fighter():
 
     def draw(self, surface):
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
+
+    def get_rect(self):
+        return self.rect

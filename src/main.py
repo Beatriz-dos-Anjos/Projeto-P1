@@ -34,10 +34,6 @@ def bg():
     escala = pygame.transform.scale(fundo, (largura, altura))
     tela.blit(escala, (0, 0))
 
-draw_object(object_move,movimento_vertical,vel_y,hitbox_obj,player_rect):
-    hitbox_obj.movimento_vertical(vel_y)
-    hitbox_obj.object_move(player_rect)
-
 
 # Criando os personagens
 Taylor_Swift = Taylor_fighter(1, 200, 310)
@@ -51,9 +47,11 @@ Kanye_West_Bars = Barra_de_vida(2, tela)
 # criando objetos
 grammy = Grammy(tela, 750, 0, Taylor_Swift_Bars, Kanye_West_Bars)
 vma = Vma(tela, 500, 0, Taylor_Swift_Bars, Kanye_West_Bars)
-jordan = Jordan(tela, 250, 0, Taylor_Swift_Bars, Kanye_West_Bars)
+jordan = Jordan(tela)
+#ajudar na colisao
 
-#
+
+    # só feito com o jordan
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
 
@@ -61,7 +59,7 @@ localizacao_taylor_x, localizacao_taylor_y = 0, 0
 while True:
     relogio.tick(FPS)
     bg()
-    draw_object(object_move,movimento_vertical,vel_y,hitbox_obj_player_rect)
+    jordan.draw(Taylor_Swift.get_rect(), Kanye_West.get_rect(), Taylor_Swift_Bars, Kanye_West_Bars)
     # Interação de Combate
     Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars)
     Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars)
@@ -76,7 +74,9 @@ while True:
     # Desenhar as barras de vida
     Taylor_Swift_Bars.draw()
     Kanye_West_Bars.draw()
-    # De
+    #desenhando os objetos
+  #É A QUE DETECTA COLISAO E O MOVIMENTO NO EIXO Y
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
