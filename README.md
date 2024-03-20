@@ -26,12 +26,19 @@ Preparado para se divertir?
 Nosso jogo é multiplayer local, ou seja, você e seu amigo podem travar essa luta épica lado a lado até a morte.<br>
 Para essa aventura você podera escolher entre dois personagens
 
+![Taylor](https://www.mortalkombatwarehouse.com/mk3/sonya/sprites/stance/a1.gif)  De um lado você pode escolher a diva pop super influente na atualidade, **Taylor Swift**
+![Kanye](https://s6.ezgif.com/tmp/ezgif-6-2cb33a4abf.gif)
+Do outro, bom... só o **Kanye West**
+
+
 ## Estrutura de Pastas:
 
 Arquitetura de pastas do projeto
 
 ## Como Baixar:
-
+>+ Basta Ter o Python e o Pygame instalados em sua Máquina.<br>
+>+ Clonar este repositório ou baixar o aquivo zip.<br>
+>+ Rodar o arquivo main.py.<br>
 ## Divisão de tarefas do projeto:
 
 | Time                                                  | Tarefas                                                                                |
@@ -65,6 +72,8 @@ Arquitetura de pastas do projeto
 Para estruturar o código utilizamos a ferramenta **VSCode**, já a ferramenta de depuração usamos para debugar os códigos e o **Github** a fim de armazenar todas as versões dos programas feitos.<br>
 As bibliotecas utilizadas foram o **Pygame**, que facilita o desenvolvimento dos jogos ao otimizar o código nas ações de detecção de colisão, desenho de formas geométricas, detecção da quantidade de frames e duração do jogo, bem como o controle da aparição e desaparecimento das telas.
 ## Desafios e Erros:
+Os principais **desafios** foram a escolha das sprites, aprender a usar o GitHub de forma completa, organizar as tarefas efetivamente e gerir o tempo com os outros projetos atribuídos<br>
+Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do processo, afetando o nosso tempo nas partes finais e mais complicadas do projeto. outro erro foi não ter dado prioridade suficiente para a parte dos objetos coletáveis. 
 
 ## A Equipe:
 
