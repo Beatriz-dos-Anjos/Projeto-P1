@@ -9,10 +9,12 @@ x_ret_3 = (LARGURA / 2) + 200
 y_retangulo_3=-1
 hitbox_obj= pygame.draw.rect(tela, (0, 255, 0), (x_ret_3, y_retangulo_3, 10, 20))
 class Jordan:
-    def __init__(self, tela, x, y, barra_de_vida):
+    def __init__(self, tela, x, y, barra_de_vida, barra_de_vida_2):
         self.tela = tela
         self.rect = pygame.Rect(x, y, 75, 80) 
         self.barra_de_vida = barra_de_vida
+        self.barra_de_vida = barra_de_vida
+        self.barra_de_vida_2 = barra_de_vida_2
         self.image = pygame.image.load('assets/images/objetos_interagiveis/jordan.png')
         self.default_scale = (75, 80)
         self.image = pygame.transform.scale(self.image, self.default_scale)
