@@ -37,14 +37,33 @@ Arquitetura de pastas do projeto
 | Time                                                  | Tarefas                                                                                |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Antonio Carolino](link_do_git)                       |                                                                                        |
-| [Beatriz](link_do_git)                                |                                                                                        |
+| [Beatriz Dos anjos](link_do_git)                                |                                                                                        |
 | [Luiza Trigueiro](link_do_git)                        |                                                                                        |
-| [Maria Clara](link_do_git)                            |                                                                                        |
+| [Maria Clara Gomes](link_do_git)                            |                                                                                        |
 | [Paulo Vieira](link_do_git)                           |                                                                                        |
 | [Sérgio Lira](link_do_git)                            |                                                                                        |
 
 ## Conceitos utilizados:
+### Os **conceitos** que foram apresentados durante a disciplina e utilizados no projeto:<br>
+**🔄Estruturas de Repetição:** O jogo em si é construído dentro de um loop, no qual ou se a pessoa escolher sair ou perder, é finalizado. Logo, todas as ações estão dentro dele (objetos caindo, personagens se movimentando, exibição de telas). O loop foi utilizado internamente para formar as listas com as sprites do logo e movimentação dos personagens.<br>
 
+**🛠️Funções:** Fizemos diversas funções/métodos para ajudar na otimização do código, como para marcar as colisões entre os personagens, bem como as deles e dos objetos coletáveis caindo ; os comandos de ataque para o personagem ; estabelecer a movimentação, só que de ambos os personagens; perder e ganhar vida  baseado nos danos ou recuperações; atualizar a barra que delimite  a utilização do ataque especial; além do innit, o qual cria o objeto de cada classe; também usamos na **animação das sprites.** 
+
+**⚖️Condicionais:** as condicionais são amplamente utilizadas em diversas partes do jogo para controlar e delimitar diferentes aspectos do seu funcionamento:<br>
+**1-** Delimitação de Ações do Personagem: Condicionais são usadas para controlar o momento em que certas ações podem ser executadas, como permitir que um ataque seja realizado apenas após um certo período de tempo ou verificar se ainda há vida nos personagens.<br>
+**2** -Atualização de Elementos Gráficos: São aplicadas para atualizar a visualização de elementos gráficos, como as barras de vida dos personagens, garantindo que sejam exibidas corretamente e de acordo com a situação.<br>
+**3-** Gestão de Colisões: As condicionais são fundamentais para verificar e lidar com colisões entre objetos no jogo, aplicando as ações corretas quando ocorrem interações entre eles.<br>
+**4-** Controle de Movimentação: São utilizadas para controlar a movimentação dos personagens com base nas entradas do jogador, garantindo que se movam de acordo com as teclas pressionadas e permaneçam dentro dos limites da tela.<br>
+**5-** Configuração de Animações: Condicionais determinam quais animações devem ser exibidas com base nas diferentes situações do jogo, como movimento ou ataque, e permitem a transição suave entre elas.
+
+**🏛️Herança:** a situação em que uma classe pode utilizar atributos e métodos de outra classe é recorrente nas colisões. Na parte dos personagens, por exemplo, usou a definição de quem seria o jogador ( na classe da Taylor e do Kanye) na classe barra de vida; as classes do grammy, vma e jordan utilizam também o retângulo formado por cada personagem ( que está na sua  respectiva classe) para caracterizar a colisão. 
+
+**📜Listas:** para fazer a animação da logo aparecer, cada um dos frames foram guardados em listas (pegando sempre o primeiro elemento e gradualmente mudando) - a mesma coisa foi feita para o botão start; a animação dos personagens também foi feita por lista num loop para adicionar cada frame (com quantidade previamente estabelecida no código), além da imagem ter sido redimensionada. Entretanto, vale ressaltar que para eles houve uma fragmentação no código, pois um continha o loop formador da lista e o outro direcionava de qual arquivo do computador deveria extrair as sprites - segundo a movimentação desejada. 
+
+---
+## Ferramentas e Frameworks
+Para estruturar o código utilizamos a ferramenta **VSCode**, já a ferramenta de depuração usamos para debugar os códigos e o **Github** a fim de armazenar todas as versões dos programas feitos.<br>
+As bibliotecas utilizadas foram o **Pygame**, que facilita o desenvolvimento dos jogos ao otimizar o código nas ações de detecção de colisão, desenho de formas geométricas, detecção da quantidade de frames e duração do jogo, bem como o controle da aparição e desaparecimento das telas.
 ## Desafios e Erros:
 
 ## A Equipe:
