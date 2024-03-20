@@ -80,11 +80,14 @@ class Fundo_do_jogo():
 
 
 # função para testar se o player está vivo ou morto
-def alive_or_die(player_class, player_bar):
-    print (player_bar.get_life())
-    if player_bar.get_life() == 0:
+def alive_or_die(player1_class, player1_bar, player2_class, player2_bar):
+    if player1_bar.get_life() == 0:
         print("MORREU")
-        player_class.die()
+        player1_class.die()
+        return False
+    elif player2_bar.get_life() == 0:
+        print("MORREU")
+        player2_class.die()
         return False
     return True
 
@@ -96,13 +99,13 @@ def bg():
 tela_do_jogo = Fundo_do_jogo(tela, altura, largura)
 
 # Criando os personagens
-Taylor_Swift = Kanye_fighter(1, 200, 310) # alterei para executar teste
-Kanye_West = Kanye_fighter(2, 700, 310)
+Taylor_Swift = Taylor_fighter(2, 700, 310) # alterei para executar teste
+Kanye_West = Kanye_fighter(1, 200, 310)
 
 
 # criando as barras de vida e as barras de especial dos personagens
-Taylor_Swift_Bars = Barra_de_vida(1, tela)
-Kanye_West_Bars = Barra_de_vida(2, tela)
+Taylor_Swift_Bars = Barra_de_vida(2, tela)
+Kanye_West_Bars = Barra_de_vida(1, tela)
 
 #
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
@@ -110,6 +113,7 @@ localizacao_taylor_x, localizacao_taylor_y = 0, 0
 hit_box_taylor = 0
 hit_box_kanye = 0
 game = True
+personagem_morto = None
 # loop
 while True:
     relogio.tick(FPS)
@@ -119,10 +123,10 @@ while True:
         relogio.tick(FPS)
         #bg()
         tela_do_jogo.battlegorund_print()
-        game = alive_or_die(Taylor_Swift, Taylor_Swift_Bars)
+        game = alive_or_die(Taylor_Swift, Taylor_Swift_Bars, Kanye_West, Kanye_West_Bars)
         # Interação de Combate
         Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars, Taylor_Swift_Bars, Kanye_West.is_defendendo_ou_nao())
-        Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars, Kanye_West_Bars, Taylor_Swift.is_defendendo_ou_nao())
+        Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars, Kanye_West_Bars, False)
 
         # Movimento dos personagens
         localizacao_taylor_x, localizacao_taylor_y = Taylor_Swift.return_x_y()
@@ -152,7 +156,7 @@ while True:
     Kanye_West.draw(tela)
     Taylor_Swift.draw(tela)
     # Desenhar as barras de vida
-    Taylor_Swift_Bars.draw()
+    Taylor_Swift_Bars.draw() 
     Kanye_West_Bars.draw()
 
     for event in pygame.event.get():

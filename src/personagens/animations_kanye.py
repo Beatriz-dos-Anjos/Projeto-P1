@@ -64,4 +64,12 @@ defesa_number_frames = 1
 defesa_size_of_frame_x = 80
 defesa_size_of_frame_y = 125
 
-defesa = formar_lista_animacao(defesa_spritesheet, defesa_number_frames, defesa_size_of_frame_x, defesa_size_of_frame_y, 1)
+defesa = formar_lista_animacao(defesa_spritesheet, defesa_number_frames, defesa_size_of_frame_x, defesa_size_of_frame_y, 0, 0, 1)
+
+
+derrota_spritesheet = pygame.image.load("assets/images/personagens/kanye_sprites/explosion.png")
+derrota_number_frames = 6
+derrota_size_of_frame_x = 32
+derrota_size_of_frame_y = 32
+
+derrota = formar_lista_animacao(derrota_spritesheet, derrota_number_frames, derrota_size_of_frame_x, derrota_size_of_frame_y, 0, 0, 1)

@@ -69,13 +69,13 @@ kick_posicao_y_do_corte = 581 # onde o corte vai começar de Y
 kick = formar_lista_animacao(full_spritesheet_taylor, kick_number_frames, kick_size_of_frame_x, kick_size_of_frame_y, kick_posicao_x_do_corte, kick_posicao_y_do_corte, 2)
 
 # Para as sprites de animação de derrota:
-derrota_number_frames = 7 # quantidade de frames
-derrota_size_of_frame_x = 54.04  # tamanho horizontal de cada um dos frames
-derrota_size_of_frame_y = 116.2  # tamanho vertical de cada um dos frames
-derrota_posicao_x_do_corte = 54.04# onde o corte vai começar de X
-derrota_posicao_y_do_corte = 0 # onde o corte vai começar de Y
+derrota_number_frames = 6 # quantidade de frames
+derrota_size_of_frame_x = 43.83  # tamanho horizontal de cada um dos frames
+derrota_size_of_frame_y = 107  # tamanho vertical de cada um dos frames
+derrota_posicao_x_do_corte = 10# onde o corte vai começar de X
+derrota_posicao_y_do_corte = 999 # onde o corte vai começar de Y
 
-morte = formar_lista_animacao(full_spritesheet_taylor, derrota_number_frames, derrota_size_of_frame_x, derrota_size_of_frame_y, derrota_posicao_x_do_corte, derrota_posicao_y_do_corte, 2)
+derrota = formar_lista_animacao(full_spritesheet_taylor, derrota_number_frames, derrota_size_of_frame_x, derrota_size_of_frame_y, derrota_posicao_x_do_corte, derrota_posicao_y_do_corte, 2)
 
 
 # Para as sprites de animação de vitória:
