@@ -26,7 +26,7 @@ Preparado para se divertir?
 Nosso jogo é multiplayer local, ou seja, você e seu amigo podem travar essa luta épica lado a lado até a morte.<br>
 Para essa aventura você podera escolher entre dois personagens
 
-![Taylor](https://www.mortalkombatwarehouse.com/mk3/sonya/sprites/stance/a1.gif)  De um lado você pode escolher a diva pop super influente na atualidade, **Taylor Swift**
+De um lado você pode escolher a diva pop super influente na atualidade, **Taylor Swift**![Taylor](https://www.mortalkombatwarehouse.com/mk3/sonya/sprites/stance/a1.gif)  
 ![Kanye](https://s6.ezgif.com/tmp/ezgif-6-2cb33a4abf.gif)
 Do outro, bom... só o **Kanye West**
 
@@ -78,6 +78,7 @@ Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do 
 ## A Equipe:
 ## Galeria do jogo
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20192044.png)
+![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20193033.png)
 
 O jogo foi desenvolvido para a cadeira de P1...
 </div>
