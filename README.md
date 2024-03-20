@@ -22,7 +22,9 @@
 **Swift of Fightwest** é um jogo de luta em que você terá a ilustre opção de jogar com uma ícone do mundo POP ou um….bem, vamos pular esse quesito. Você poderá escolher  jogar em arenas mundialmente famosas, como o **palco do vma** e entre outras futuramente lançadas. O funcionamento do jogo é simples, temos todos os comandos que podem ser realizados em jogos de lutas tradicionais, andar, pular, socar, chutar e um ataque especial.<br>
 Assim, nosso principal objetivo foi fazer uma luta entre os personagens de Taylor Swift e Kanye West com os golpes diminuindo a barra da vida. Enquanto isso, os troféus  (Grammy e Vma) começam a cair, juntamente com  o Jordan , e ao conseguir capturá-los,  esse contribui para diminuir a vida, enquanto que aqueles, para recuperá-la. 
 Preparado para se divertir?
-
+### Personagens:
+Nosso jogo é multiplayer local, ou seja, você e seu amigo podem travar essa luta épica lado a lado até a morte.<br>
+Para essa aventura você podera escolher entre dois personagens
 
 ## Estrutura de Pastas:
 
