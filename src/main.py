@@ -4,6 +4,10 @@ from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
 from utilities.bars import Barra_de_vida
+from utilities.jordan import Jordan
+from utilities.vma import vma 
+from utilities.grammy import Grammy 
+
 
 pygame.init()
 
@@ -30,6 +34,10 @@ def bg():
     escala = pygame.transform.scale(fundo, (largura, altura))
     tela.blit(escala, (0, 0))
 
+draw_object(object_move,movimento_vertical,vel_y,hitbox_obj,player_rect):
+    hitbox_obj.movimento_vertical(vel_y)
+    hitbox_obj.object_move(player_rect)
+
 
 # Criando os personagens
 Taylor_Swift = Taylor_fighter(1, 200, 310)
@@ -48,6 +56,7 @@ localizacao_taylor_x, localizacao_taylor_y = 0, 0
 while True:
     relogio.tick(FPS)
     bg()
+    draw_object(object_move,movimento_vertical,vel_y,hitbox_obj_player_rect)
     # Interação de Combate
     Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars)
     Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars)
@@ -62,6 +71,9 @@ while True:
     # Desenhar as barras de vida
     Taylor_Swift_Bars.draw()
     Kanye_West_Bars.draw()
+
+        
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()

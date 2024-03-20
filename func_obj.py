@@ -8,3 +8,4 @@ def Colocando_img(trofeu):
 
 def Limite_tela(objeto, ALTURA):
     return objeto.y > ALTURA
+
