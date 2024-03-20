@@ -2,14 +2,14 @@ import pygame
 from pygame.locals import *
 from utilities.fight_commands import combate
 from utilities.movimentacao import move
-from personagens.animation_taylor import idle, walk, punch, kick, jump
+from personagens.animation_taylor import idle, walk, punch, kick
 
 
 class Taylor_fighter():
     def __init__(self, player, x, y):
         self.player = player
         self.rect = pygame.Rect(x, y, 145, 240)
-        self.animations = [idle, walk, jump, punch, kick]
+        self.animations = [idle, walk, punch, kick]
         self.current_animation = 0
         self.current_animation_frame = 0
         self.is_attacking_or_jumping = False
@@ -60,7 +60,7 @@ class Taylor_fighter():
             
             # Troca para a animação de soco
             if self.attacking_type == 1 and self.is_performming_attack == False:
-                self.current_animation = 3 # punch
+                self.current_animation = 2 # punch
                 self.current_animation_frame = 0
                 self.is_moving = False
                 self.is_performming_attack = True
