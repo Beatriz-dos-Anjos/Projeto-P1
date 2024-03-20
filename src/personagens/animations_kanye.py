@@ -57,3 +57,11 @@ kick_p2 = formar_lista_animacao(kick_spritesheet, kick_number_frames, kick_size_
 
 #special = pygame.image.load("assets/images/personagens/kanye_sprites/special.png")
 
+
+# Para as sprites da defesa:
+defesa_spritesheet = pygame.image.load("assets/images/personagens/kanye_sprites/defesa.png")
+defesa_number_frames = 1
+defesa_size_of_frame_x = 80
+defesa_size_of_frame_y = 125
+
+defesa = formar_lista_animacao(defesa_spritesheet, defesa_number_frames, defesa_size_of_frame_x, defesa_size_of_frame_y, 1)

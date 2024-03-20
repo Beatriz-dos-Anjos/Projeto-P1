@@ -3,10 +3,11 @@ from pygame.locals import *
 from utilities.colisoes import colisao # Não está pegando sem o utilities
 
 
-def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player):
+def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player, inimigo_esta_defendendo):
         attacking_damage = 0
         attacked_or_not = False
         tipo_de_ataque = None
+        defendendo_ou_nao = False
         
         keys = pygame.key.get_pressed()
 
@@ -15,7 +16,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             # ATAQUE DE SOCO
             if keys[pygame.K_e]:
 
-                attacking_damage = 5  # Quantidade de dano
+                attacking_damage = 5 if inimigo_esta_defendendo == False else 1 # Quantidade de dano
                 attacked_or_not = True # variável para se ele atacou ou não
 
                 area_de_colisao = pygame.Rect(rect.x + 165, rect.y, 80, 100)  #área de colisão
@@ -29,7 +30,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             # ATAQUE DE CHUTE
             if keys[pygame.K_r]:
 
-                attacking_damage = 7  
+                attacking_damage = 7 if inimigo_esta_defendendo == False else 3
                 attacked_or_not = True
                 
                 area_de_colisao = pygame.Rect(rect.x + 140, rect.y + 60, 80, 150)
@@ -56,12 +57,16 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
 
+            if keys[pygame.K_f]:
+                defendendo_ou_nao = True
+
+
         elif player == 2:  # COMANDOS DE ATAQUE PARA O PLAYER 2
 
             # ATAQUE DE SOCO
             if keys[pygame.K_b]:
 
-                attacking_damage = 5
+                attacking_damage = 5 if inimigo_esta_defendendo == False else 1 
                 attacked_or_not = True
 
                 area_de_colisao = pygame.Rect(rect.x - 165, rect.y, 80, 100)  #área de colisão
@@ -75,7 +80,7 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
             # ATAQUE DE CHUTE
             if keys[pygame.K_n]:
 
-                attacking_damage = 7 
+                attacking_damage = 7 if inimigo_esta_defendendo == False else 3
                 attacked_or_not = True
                 
                 area_de_colisao = pygame.Rect(rect.x - 140, rect.y + 60, 80, 150)
@@ -102,4 +107,4 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
 
-        return attacked_or_not, tipo_de_ataque
+        return attacked_or_not, tipo_de_ataque, defendendo_ou_nao
