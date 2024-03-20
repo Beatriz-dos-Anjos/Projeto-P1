@@ -44,10 +44,6 @@ Kanye_West = Kanye_fighter(2, 700, 310)
 Taylor_Swift_Bars = Barra_de_vida(1, tela)
 Kanye_West_Bars = Barra_de_vida(2, tela)
 
-# criando objetos
-grammy = Grammy(tela, 750, 0, Taylor_Swift_Bars, Kanye_West_Bars)
-vma = Vma(tela, 500, 0, Taylor_Swift_Bars, Kanye_West_Bars)
-jordan = Jordan(tela)
 #ajudar na colisao
 
 
@@ -59,7 +55,8 @@ localizacao_taylor_x, localizacao_taylor_y = 0, 0
 while True:
     relogio.tick(FPS)
     bg()
-    jordan.draw(Taylor_Swift.get_rect(), Kanye_West.get_rect(), Taylor_Swift_Bars, Kanye_West_Bars)
+    Taylor_Swift_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars)
+    Kanye_West_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars)
     # Interação de Combate
     Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y, Kanye_West_Bars)
     Kanye_West.combate(tela, localizacao_taylor_x, localizacao_taylor_y, Taylor_Swift_Bars)

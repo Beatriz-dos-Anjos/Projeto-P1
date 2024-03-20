@@ -1,7 +1,7 @@
 import pygame
 import random
 
-class Jordan:
+class Jordan():
    def __init__(self,tela):
       self.tela=tela
       self.rect=pygame.Rect(500,0,75,80) #ajudar na colisão
@@ -17,8 +17,8 @@ class Jordan:
    def movimento_vertical (self,vel_y):
         self.rect.y += vel_y
 
-   def draw(self, rect_taylor, rect_kanye, barra_de_vida_kanye, barra_de_vida_taylor):  # a de desenhar o jordan
-        self.movimento_vertical(10)
+   def draw(self, rect_taylor, rect_kanye, barra_de_vida_taylor, barra_de_vida_kanye,velocidade):  # a de desenhar o jordan
+        self.movimento_vertical(velocidade)
         self.tela.blit(self.image, self.rect)
         self.colisao(self.rect, rect_kanye, barra_de_vida_kanye) # 
         self.colisao(self.rect, rect_taylor, barra_de_vida_taylor)

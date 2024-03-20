@@ -1,26 +1,34 @@
 import pygame
+import random
 
-class Vma:
-    def __init__(self, tela, x, y, barra_de_vida, barra_de_vida_2):
-        self.tela = tela
-        self.rect = pygame.Rect(x, y, 75, 80)  
-        self.barra_de_vida = barra_de_vida
-        self.barra_de_vida_2 = barra_de_vida_2
-        self.image = pygame.image.load('assets/images/objetos_interagiveis/vma.png')
-        self.default_scale = (75, 80)
-        self.image = pygame.transform.scale(self.image, self.default_scale)
+class Vma():
+   def __init__(self,tela):
+      self.tela=tela
+      self.rect=pygame.Rect(750,0,75,80) #ajudar na colisão
+      self.image_raw =  pygame.image.load('assets/images/objetos_interagiveis/vma.png') 
+      self.default_scale= (75,80)
+      self.image = pygame.transform.scale(self.image_raw, self.default_scale)
 
-    def colisao(self, player_rect):
-        if self.rect.colliderect(player_rect):
-            self.barra_de_vida.gaining_health(5)
+   def colisao (self,rect, player_rect, barra_de_vida):
+        if rect.colliderect(player_rect):
+            barra_de_vida.loose_health(-10)
+            self.lancar_objeto()
 
-    def movimento_vertical(self, vel_y):
+   def movimento_vertical (self,vel_y):
         self.rect.y += vel_y
 
-    def colocando_img(self):
-        self.tela.blit(self.image, self.rect.topleft)  # Usando topleft para posicionar a imagem
+   def draw(self, rect_taylor, rect_kanye, barra_de_vida_taylor, barra_de_vida_kanye):  # a de desenhar o jordan
+        self.movimento_vertical(10)
+        self.tela.blit(self.image, self.rect)
+        self.colisao(self.rect, rect_kanye, barra_de_vida_kanye) # 
+        self.colisao(self.rect, rect_taylor, barra_de_vida_taylor)
 
-    def limite_tela(self, ALTURA):
-        return self.rect.y > ALTURA
-
-        
+   def limite_tela(self,ALTURA):
+       return self.rect.y> ALTURA
+   
+   def lancar_objeto(self):
+       self.rect.y = 0
+       self.rect.x = random.randint(100, 900)
+              
+                
+   

@@ -1,6 +1,8 @@
 import pygame
+from utilities.jordan import Jordan
+from utilities.vma import Vma
+from utilities.grammy import Grammy
 from pygame.locals import *
-
 
 class Barra_de_vida():
     def __init__(self, player, surface):
@@ -10,9 +12,26 @@ class Barra_de_vida():
         self.rect_special = pygame.Rect(100, 78, 230, 17) if self.player == 1 else pygame.Rect(670, 78, 230, 17)
         self.life = 100
         self.alive = True
+        self.jordan = Jordan(self.surface)
+        self.grammy = Grammy(self.surface)
+        self.vma = Vma(self.surface) 
         self.special_attack = 0
 
+    def objetos(self, rect_player_1, rect_player_2, barra_player_1, barra_player_2):
+        if self.life < 80 and self.life>50:
+            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+        
+        elif self.life<50 and self.life>30:
+            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
+            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
 
+        elif self.life<30:  
+            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,3)
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,3)
+            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,3) 
 
     # desenha tanto a barra de vida quanto a barra de ataque especial especial
     def draw(self):
@@ -36,6 +55,9 @@ class Barra_de_vida():
         if self.life <= 0:
             self.alive = False
             self.life = 0
+        
+        if self.life >= 100:
+            self.life = 100
 
         # Atualiza a largura da barra de vida proporcionalmente à vida restante
         nova_largura = (self.life / 100) * 300
