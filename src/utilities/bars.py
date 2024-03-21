@@ -14,24 +14,37 @@ class Barra_de_vida():
         self.alive = True
         self.jordan = Jordan(self.surface)
         self.grammy = Grammy(self.surface)
-        self.vma = Vma(self.surface) 
+        self.vma = Vma(self.surface)
+        self.jordan_2 = Jordan(self.surface)
+        self.grammy_2 = Grammy(self.surface)
         self.special_attack = 0
+        self.time_to_explode = 10
+        self.grammy_displayed = False
+        self.vma_displayed = False
+        self.jordan_displayed = False
 
     def objetos(self, rect_player_1, rect_player_2, barra_player_1, barra_player_2):
-        if self.life < 80 and self.life>50:
-            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
+        if (self.life < 80 and self.life>50) or self.grammy_displayed:
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
+            self.grammy_displayed = True
 
         
-        elif self.life<50 and self.life>30:
-            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
-            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10) 
+        if (self.life<50 and self.life>30) or self.vma_displayed:
+            self.grammy.velocidade = 8
+            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
+            self.vma_displayed = True
 
 
-        elif self.life<30:  
-            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
-            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
-            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10) 
+        if self.life<30 or self.jordan_displayed: 
+            self.grammy.velocidade = 12
+            self.vma.velocidade = 12
+            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
+            self.jordan_displayed = True
 
+        
+        if pygame.time.get_ticks() >= self.time_to_explode: # depois de 2 minutos começa a cair muitos objetos
+            self.jordan_2.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
+            self.grammy_2.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
 
     # desenha tanto a barra de vida quanto a barra de ataque especial especial
     def draw(self):
