@@ -86,8 +86,8 @@ assets/
 
 | Nome                  | Contribuições                                                                                   |
 |-----------------------|------------------------------------------------------------------------------------------------|
-| Antonio Carolino      | Movimentação dos personagens,Implementação das Sprites da Taylor                                       |
-| Beatriz Dos Anjos     |  Movimentação dos objetos caindo, Colisão objetos caindo e personagens, Sprites da Taylor                |
+| Antonio Carolino      | Movimentação dos personagens,Implementação das Sprites da Taylor, Sons do jogo                                       |
+| Beatriz Dos Anjos     |  Movimentação dos objetos caindo, Colisão objetos caindo e personagens, Sprites da Taylor , Readme              |
 | Luiza Trigueiro       | Orientação dos objetos, README, parte visual e técnica da arena, colisão de objetos e personagens caindo |
 | Maria Clara Gomes     | README, slides, parte visual e técnica da arena                    |
 | Paulo Vieira          | Movimentação dos personagens,Sprites do Kanye, Implementação das Sprites do Kanye                                                                                                |
