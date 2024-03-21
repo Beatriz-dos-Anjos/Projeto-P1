@@ -7,12 +7,13 @@ from utilities.bars import Barra_de_vida
 from telas.cenario import Fundo_do_jogo
 from telas.telainicial import *
 
-#inicia o pygame
+# inicia o pygame
 pygame.init()
 
 # musica de fundo
 pygame.mixer.music.set_volume(0.2)
-musica_de_fundo = pygame.mixer.music.load('assets/images/sounds/ReadyForIt.mp3')
+musica_de_fundo = pygame.mixer.music.load(
+    'assets/images/sounds/ReadyForIt.mp3')
 
 # dimensões cenário
 largura = 1000
@@ -37,6 +38,8 @@ personagem_1 = fonte.render("Pressione 1 para selecionar", True, branco)
 personagem_2 = fonte.render("Pressione 2 para selecionar", True, branco)
 
 # função para testar se o player está vivo ou morto
+
+
 def alive_or_die(player1_class, player1_bar, player2_class, player2_bar):
     if player1_bar.get_life() == 0:
         print("MORREU")
@@ -50,6 +53,7 @@ def alive_or_die(player1_class, player1_bar, player2_class, player2_bar):
         return personagem_morto
     return True
 
+
 tela_do_jogo = Fundo_do_jogo(tela, altura, largura)
 
 # Criando os personagens
@@ -60,7 +64,7 @@ Kanye_West = Kanye_fighter(1, 200, 310)
 Taylor_Swift_Bars = Barra_de_vida(2, tela)
 Kanye_West_Bars = Barra_de_vida(1, tela)
 
-#setando umas variavel util para o jogo
+# setando umas variavel util para o jogo
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
 
@@ -104,7 +108,6 @@ while True:
     elif cena == "selecao":
 
         tela_selecao = pygame.transform.scale(var_selecao, (largura, altura))
-
 
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -163,8 +166,12 @@ while True:
             relogio.tick(FPS)
             # bg()
             tela_do_jogo.battlegorund_print()
-            Taylor_Swift_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
-            Kanye_West_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
+            # encaixar dentro de combate
+            Taylor_Swift_Bars.objetos(
+                Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars)
+            # encaixar dentro de combate
+            Kanye_West_Bars.objetos(
+                Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars)
             game = alive_or_die(Kanye_West, Kanye_West_Bars,
                                 Taylor_Swift, Taylor_Swift_Bars)
             if game == Kanye_West:
@@ -172,8 +179,6 @@ while True:
 
             elif game == Taylor_Swift:
                 cena = 'kanye_wins'
-
-            
 
             # Interação de Combate
             Taylor_Swift.combate(tela, localizacao_kanye_x, localizacao_kanye_y,
@@ -203,28 +208,22 @@ while True:
 
             pygame.display.update()  # ESTUDAR MUDAR PARA O FLIP
 
-    
-        
-
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
                 exit()
     elif cena == 'kanye_wins':
-        som_de_vitoria_kanye = pygame.mixer.Sound('assets/images/sounds/victory_songs/kanye_sound.mp3')
-        som_de_vitoria_kanye.play()
         tela_final = pygame.image.load(
-                'assets/images/background/end/kanye.png').convert()
+            'assets/images/background/end/kanye.png').convert()
         tela_end = pygame.transform.scale(
-                tela_final, (largura, altura))
+            tela_final, (largura, altura))
         sprites.remove(start)
         sprites.add(end)
         sprites.draw(tela_end)
         sprites.update()
         Taylor_Swift_Bars.default()
         Kanye_West_Bars.default()
-        
-        
+
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
@@ -234,26 +233,23 @@ while True:
                     cena = 'menu'
                     sprites.add(logo)
                     sprites.add(start)
-                    personagems = ()       
+                    personagems = ()
                     var_selecao = pygame.image.load(
                         'assets/images/background/selecao/antes_de_escolher.png').convert()
                     game = True
-        
+
         tela.blit(tela_end, (0, 0))
-
-
 
     elif cena == 'taylor_wins':
         tela_final = pygame.image.load(
-                'assets/images/background/end/swift.png').convert()
+            'assets/images/background/end/swift.png').convert()
         tela_end = pygame.transform.scale(
-                tela_final, (largura, altura))
+            tela_final, (largura, altura))
         sprites.remove(start)
         sprites.add(end)
         sprites.draw(tela_end)
         sprites.update()
-        
-        
+
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
@@ -263,15 +259,13 @@ while True:
                     cena = 'menu'
                     sprites.add(logo)
                     sprites.add(start)
-                    personagems = ()     
+                    personagems = ()
                     var_selecao = pygame.image.load(
                         'assets/images/background/selecao/antes_de_escolher.png').convert()
 
                     game = True
-        
+
         tela.blit(tela_end, (0, 0))
-
-
 
     pygame.display.flip()  # ESTUDAR MUDAR PARA O FLIP
     # bg()
