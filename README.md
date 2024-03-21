@@ -36,7 +36,7 @@ A primeira coisa a decidir é quem será a Taylor e quem será o Kanye.<br>
 #### Movimentação da Taylor
 Para controlar a Taylor iremos usar as **Flechas** do teclado, alem disso a taylor tabem dá socos no **“B”** e chutes no **“N”**
 #### Movimentação do Kanye
-Para controlar o Kanye, iremos usar as teclas **W, A, D**. Além disso, o Kanye também dá socos no **E**, chuta no **R** e consegue se defender no **F**.
+Para controlar o Kanye, iremos usar as teclas **W, A, D**. Além disso, o Kanye também dá socos no **E** e chuta no **R** 
 #### Coletáveis
 Além da luta, o jogo também contará com alguns elementos que cairão do "céu" e poderão ser coletados. Os elementos são o troféu do **VMA**, do **Grammy** e um tênis **Jordan**; este último diminuirá a vida do personagem que o pegar, enquanto os outros dois aumentarão.
 
@@ -48,10 +48,10 @@ Além da luta, o jogo também contará com alguns elementos que cairão do "céu
 ### scr
 
 O diretório **"src"** é onde está contido o **código-fonte** principal do projeto. Todos os arquivos e diretórios relacionados à implementação do software são agrupados aqui.
-Dentro do "src" temos vários subdiretórios que agrupam os principais códigos do programa:
-O subdiretório "**objetos_interagiveis"** contém as classes referentes aos objetos coletáveis: 'Grammy', 'Vma' e 'Jordan', divididas em 3 arquivos diferentes.
-O subdiretório **"personagens"** contém todo o script de cada um dos dois personagens, contendo também o arquivo que coloca as spritesheets dentro do jogo.
-O subdiretório **"telas"** contém as configurações das diferentes telas que mostramos na execução do jogo.
+Dentro do "src" temos vários subdiretórios que agrupam os principais códigos do programa:<br>
+O subdiretório "**objetos_interagiveis"** contém as classes referentes aos objetos coletáveis: 'Grammy', 'Vma' e 'Jordan', divididas em 3 arquivos diferentes.<br>
+O subdiretório **"personagens"** contém todo o script de cada um dos dois personagens, contendo também o arquivo que coloca as spritesheets dentro do jogo.<br>
+O subdiretório **"telas"** contém as configurações das diferentes telas que mostramos na execução do jogo.<br>
 O subdiretório **"utilities"** contém arquivos que possuem funções que estão sendo usadas em vários scripts do jogo e também contém um arquivo com a classe referente as barras de vida dos personagens.
 
 ```text
