@@ -1,7 +1,7 @@
 import pygame
-from utilities.jordan import Jordan
-from utilities.vma import Vma
-from utilities.grammy import Grammy
+from objetos_interagiveis.jordan import Jordan
+from objetos_interagiveis.vma import Vma
+from objetos_interagiveis.grammy import Grammy
 from pygame.locals import *
 
 class Barra_de_vida():
@@ -35,20 +35,24 @@ class Barra_de_vida():
             self.vma_displayed = True
 
         if self.life<30 or self.jordan_displayed: 
-            self.grammy.velocidade = 12
-            self.vma.velocidade = 12
             self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
             self.jordan_displayed = True
 
         
-        if pygame.time.get_ticks() >= self.time_to_explode: # depois de 2 minutos começa a cair muitos objetos
+        """if pygame.time.get_ticks() >= self.time_to_explode: # depois de 2 minutos começa a cair muitos objetos
             self.jordan_2.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
-            self.grammy_2.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
+            self.grammy_2.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)  --> não consegue lidar com refresh do game""" 
 
     # desenha tanto a barra de vida quanto a barra de ataque especial especial
     def draw(self):
         pygame.draw.rect(self.surface, (0, 255, 0), self.rect_health)
         pygame.draw.rect(self.surface, (255, 255, 255), self.rect_special)
+
+    
+    def default(self):
+        self.grammy_displayed = False
+        self.jordan_displayed = False
+        self.vma_displayed = False
 
 
     # função para a vida do personagem e a barra da vida ser atualizada
@@ -86,12 +90,6 @@ class Barra_de_vida():
     def get_life(self):
         return self.life
     
-        
-    # função para a vida do personagem e a barra da vida ser atualizada
-    def gain_health(self, quantidade):
-        # função especificamente para interagir com o gramy e o vma
-        pass
-
     
     # função para conferir se é possível realizar o especial
     def can_use_special(self):

@@ -8,7 +8,7 @@ class Jordan():
       self.image_raw =  pygame.image.load('assets/images/objetos_interagiveis/jordanprincipal.png') 
       self.default_scale= (75,80)
       self.image = pygame.transform.scale(self.image_raw, self.default_scale)
-      self.velocidade = 12
+      self.velocidade = 8
 
    def colisao (self,rect, player_rect, barra_de_vida):
         if rect.colliderect(player_rect):
