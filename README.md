@@ -12,7 +12,7 @@
 
 [Paulo Vieira-(pegv)](https://github.com/paulogestosa) <br>
 
-[link do perfil do github-(login)](URL_do_Link) <br>
+[Sérgio Lira-(sll)](https://github.com/SergioL1ra) <br>
 
 ---
 
@@ -30,10 +30,50 @@ De um lado você pode escolher a diva pop super influente na atualidade, **Taylo
 
 Do outro, bom... só o **Kanye West** mesmo ![Kanye](https://www.fightersgeneration.com/nx9/char/kof2k2/seth/seth-kof2002-walkforward.gif)
 
+### Como jogar:
+Nosso jogo é multiplayer local, então você e seu amigo podem jogar juntos lado a lado.<br>
+A primeira coisa a decidir é quem será a Taylor e quem será o Kanye.<br>
+#### Movimentação da Taylor
+Para controlar a Taylor iremos usar as **Flechas** do teclado, alem disso a taylor tabem dá socos no **“B”** e chutes no **“N”**
+#### Movimentação do Kanye
+Para controlar o Kanye, iremos usar as teclas **W, A, D**. Além disso, o Kanye também dá socos no **E**, chuta no **R** e consegue se defender no **F**.
+#### Coletáveis
+Além da luta, o jogo também contará com alguns elementos que cairão do "céu" e poderão ser coletados. Os elementos são o troféu do **VMA**, do **Grammy** e um tênis **Jordan**; este último diminuirá a vida do personagem que o pegar, enquanto os outros dois aumentarão.
 
+---
 ## Estrutura de Pastas:
 
-Arquitetura de pastas do projeto
+### Arquitetura de pastas do projeto
+
+### scr
+
+O diretório **"src"** é onde está contido o **código-fonte** principal do projeto. Todos os arquivos e diretórios relacionados à implementação do software são agrupados aqui.
+Dentro do "src" temos vários subdiretórios que agrupam os principais códigos do programa:
+O subdiretório "**objetos_interagiveis"** contém as classes referentes aos objetos coletáveis: 'Grammy', 'Vma' e 'Jordan', divididas em 3 arquivos diferentes.
+O subdiretório **"personagens"** contém todo o script de cada um dos dois personagens, contendo também o arquivo que coloca as spritesheets dentro do jogo.
+O subdiretório **"telas"** contém as configurações das diferentes telas que mostramos na execução do jogo.
+O subdiretório **"utilities"** contém arquivos que possuem funções que estão sendo usadas em vários scripts do jogo e também contém um arquivo com a classe referente as barras de vida dos personagens.
+
+```text
+scr/
+├── objetos_interagiveis
+├── personagens
+├── telas
+├── utilities
+├── main.py
+```
+
+### assets
+
+Arquivos de assets do jogo. Imagens, sons, etc.
+
+```text
+assets/
+
+├── images
+├── background
+├── backgrounds
+```
 
 ## Como Baixar:
 >+ Basta Ter o Python e o Pygame instalados em sua Máquina.<br>
@@ -41,6 +81,7 @@ Arquitetura de pastas do projeto
 >+ Clonar este repositório .<br>
 
 >+ Rodar o arquivo main.py.<br>
+
 ## Divisão de tarefas do projeto:
 
 | Nome                  | Contribuições                                                                                   |
@@ -90,46 +131,3 @@ Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do 
 #### 👤Seleção de personagem
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20193033.png)
 
-
-## Estrutura de Pastas
-
-Arquitetura de pastas do projeto
-
-### scr
-
-O diretório "src" é onde está contido o código-fonte principal do projeto. Todos os arquivos e diretórios relacionados à implementação do software são agrupados aqui.
-Dentro do "src" temos vários subdiretórios que agrupam os principais códigos do programa:
-
-O subdiretório "objetos_interagiveis" contém as classes referentes aos objetos coletáveis: 'Grammy', 'Vma' e 'Jordan', divididas em 3 arquivos diferentes.
-
-O subdiretório "personagens" contém todo o script de cada um dos dois personagens, contendo também o arquivo que coloca as spritesheets dentro do jogo.
-
-O subdiretório "telas" contém as configurações das diferentes telas que mostramos na execução do jogo.
-
-O subdiretório "utilities" contém arquivos que possuem funções que estão sendo usadas em vários scripts do jogo e também contém um arquivo com a classe referente as barras de vida dos personagens.
-
-```text
-scr/
-├── objetos_interagiveis
-├── personagens
-├── telas
-├── utilities
-├── main.py
-```
-
-### assets
-
-Arquivos de assets do jogo. Imagens, sons, etc.
-
-```text
-assets/
-
-├── images
-├── background
-├── backgrounds
-├── objetos_interagiveis
-├── personagens
-├── sounds
-```
-
-</div>
