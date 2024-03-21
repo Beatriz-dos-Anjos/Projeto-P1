@@ -23,13 +23,15 @@ class Barra_de_vida():
 
         
         elif self.life<50 and self.life>30:
-            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
             self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10) 
+
 
         elif self.life<30:  
             self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
             self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
             self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10) 
+
 
     # desenha tanto a barra de vida quanto a barra de ataque especial especial
     def draw(self):

@@ -23,8 +23,8 @@ class Jordan():
         self.colisao(self.rect, rect_kanye, barra_de_vida_kanye) # 
         self.colisao(self.rect, rect_taylor, barra_de_vida_taylor)
 
-   def limite_tela(self,ALTURA):
-       return self.rect.y> ALTURA
+   def limite_tela(self):
+       return self.rec
    
    def lancar_objeto(self):
        self.rect.y = 0
