@@ -6,9 +6,9 @@
 
 [Maria Clara Gomes-(mcga)](https://github.com/M4riaclaragomes) <br>
 
-[link do perfil do github-(login)](URL_do_Link) <br>
+[Beatriz dos Anjos-(bma3)](https://github.com/Beatriz-dos-Anjos) <br>
 
-[link do perfil do github-(login)](URL_do_Link) <br>
+[Antonio Rodrigues-(arpc3)](https://github.com/AntonioCar0lin0) <br>
 
 [link do perfil do github-(login)](URL_do_Link) <br>
 
@@ -38,7 +38,7 @@ Arquitetura de pastas do projeto
 ## Como Baixar:
 >+ Basta Ter o Python e o Pygame instalados em sua Máquina.<br>
 
->+ Clonar este repositório ou baixar o aquivo zip.<br>
+>+ Clonar este repositório .<br>
 
 >+ Rodar o arquivo main.py.<br>
 ## Divisão de tarefas do projeto:
@@ -85,7 +85,9 @@ Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do 
 ---
 
 # 🖼️Galeria do jogo
+#### ▶️Tela inicial
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20192044.png)
+#### 👤Seleção de personagem
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20193033.png)
 
 
