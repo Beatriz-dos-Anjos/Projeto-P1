@@ -19,19 +19,17 @@ class Barra_de_vida():
 
     def objetos(self, rect_player_1, rect_player_2, barra_player_1, barra_player_2):
         if self.life < 80 and self.life>50:
-            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
-            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
-            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
+
         
         elif self.life<50 and self.life>30:
-            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
-            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
-            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,6)
+            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
 
         elif self.life<30:  
-            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,3)
-            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,3)
-            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,3) 
+            self.jordan.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.grammy.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10)
+            self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2,10) 
 
     # desenha tanto a barra de vida quanto a barra de ataque especial especial
     def draw(self):
