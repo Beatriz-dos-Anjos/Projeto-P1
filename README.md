@@ -26,9 +26,9 @@ Preparado para se divertir?
 Nosso jogo é multiplayer local, ou seja, você e seu amigo podem travar essa luta épica lado a lado até a morte.<br>
 Para essa aventura você podera escolher entre dois personagens
 
-De um lado você pode escolher a diva pop super influente na atualidade, **Taylor Swift**![Taylor](https://www.mortalkombatwarehouse.com/mk3/sonya/sprites/stance/a1.gif)  
-![Kanye](https://s6.ezgif.com/tmp/ezgif-6-2cb33a4abf.gif)
-Do outro, bom... só o **Kanye West**
+De um lado você pode escolher a diva pop super influente na atualidade, **Taylor Swift** ![Taylor](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgetElVtbTbB0gsniD2zGTo0nrCyD0jqkvr2S19-EjOy7aBce_ffnPC64Y_JSWfP2dBrgcN31eIRMTSXuQE_evqrlCPMDmVhYjqRxy5sHyk2Gdkggk3iW0qFd4hiz5RchPgXspmK0TAcH8/s1600/Sonya+Blade+3.gif)  
+
+Do outro, bom... só o **Kanye West** mesmo ![Kanye](https://www.fightersgeneration.com/nx9/char/kof2k2/seth/seth-kof2002-walkforward.gif)
 
 
 ## Estrutura de Pastas:
@@ -37,19 +37,20 @@ Arquitetura de pastas do projeto
 
 ## Como Baixar:
 >+ Basta Ter o Python e o Pygame instalados em sua Máquina.<br>
+
 >+ Clonar este repositório ou baixar o aquivo zip.<br>
+
 >+ Rodar o arquivo main.py.<br>
 ## Divisão de tarefas do projeto:
 
-| Time                                                  | Tarefas                                                                                |
-| ----------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Antonio Carolino](link_do_git)                       |  Movimentação dos personagens e adicionou sons ao jogo                                                                         |
-| [Beatriz Dos anjos](link_do_git)                                | Orientação dos objetos, selecionou as sprites da Taylor e selecionou as músicas                                                                                      |
-| [Luiza Trigueiro](link_do_git)                        |       Orientação dos objetos, Parte visual do background, Readme, Parte visual e técnica (dimensões) da arena e Colisão objetos caindo e personagens
-                                                                               
-| [Maria Clara Gomes](link_do_git)                            |  Parte visual do background, Readme, slides, Parte visual e técnica (dimensões) da arena |                                                                                       |
-| [Paulo Vieira](link_do_git)                           |                                                                                        |
-| [Sérgio Lira](link_do_git)                            |                                                                                        |
+| Nome                  | Contribuições                                                                                   |
+|-----------------------|------------------------------------------------------------------------------------------------|
+| Antonio Carolino      | Movimentação dos personagens,Implementação das Sprites da Taylor                                       |
+| Beatriz Dos Anjos     |  Movimentação dos objetos caindo, Colisão objetos caindo e personagens, Sprites da Taylor                |
+| Luiza Trigueiro       | Orientação dos objetos, README, parte visual e técnica da arena, colisão de objetos e personagens caindo |
+| Maria Clara Gomes     | README, slides, parte visual e técnica da arena                    |
+| Paulo Vieira          | Movimentação dos personagens,Sprites do Kanye, Implementação das Sprites do Kanye                                                                                                |
+| Sérgio Lira           | Tela de Menu, Logo do jogo                                                                                                |
 
 ## Conceitos utilizados:
 ### Os **conceitos** que foram apresentados durante a disciplina e utilizados no projeto:<br>
@@ -75,11 +76,17 @@ As bibliotecas utilizadas foram o **Pygame**, que facilita o desenvolvimento dos
 ## Desafios e Erros:
 Os principais **desafios** foram a escolha das sprites, aprender a usar o GitHub de forma completa, organizar as tarefas efetivamente e gerir o tempo com os outros projetos atribuídos<br>
 Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do processo, afetando o nosso tempo nas partes finais e mais complicadas do projeto. outro erro foi não ter dado prioridade suficiente para a parte dos objetos coletáveis. 
+## Lições aprendidas 
+### As lições aprendidas com os desafios e erros enfrentados durante o projeto incluem:<br>
+**Planejamento Adequado:** É crucial dedicar tempo suficiente ao planejamento antes de iniciar qualquer projeto. Isso inclui definir claramente os requisitos, priorizar tarefas e estimar o tempo necessário para cada etapa<br>
+**Uso Eficiente de Recursos:** Tentar criar recursos complexos, como sprites, do zero pode consumir tempo valioso. É importante avaliar se é mais eficiente usar recursos pré-existentes ou buscar ajuda externa quando necessário<br>
+**Gerenciamento de Tempo:** Gerenciar o tempo de forma eficaz é essencial, especialmente quando se tem múltiplos projetos em andamento. Estabelecer prazos realistas e dividir as tarefas em etapas menores pode ajudar a evitar a sobrecarga e garantir que todas as áreas do projeto recebam a atenção necessária.
 
-## A Equipe:
-## Galeria do jogo
+---
+
+# 🖼️Galeria do jogo
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20192044.png)
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20193033.png)
 
-O jogo foi desenvolvido para a cadeira de P1...
+
 </div>
