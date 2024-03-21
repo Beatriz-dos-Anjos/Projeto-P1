@@ -18,3 +18,21 @@ def formar_lista_animacao(spritesheet, quantidade_frames, tamanho_x, tamanho_y, 
             lista_de_frames.append(imagem_modificada)
     
     return lista_de_frames
+
+
+def forrmar_chute_taylor(spritesheet, quantidade_frames, tamanho_x, tamanho_y, posicao_x_do_corte, posicao_y_do_corte, player):
+    tamanhos = [42, 42, 60, 60, 69]
+    
+    lista_de_frames = []
+
+
+    lista_de_frames.append(pygame.transform.flip(pygame.transform.scale(spritesheet.subsurface(pygame.Rect(posicao_x_do_corte, posicao_y_do_corte, 42, tamanho_y)), (tamanho_x * 2.5, tamanho_y * 2.5)), True, False))
+    lista_de_frames.append(pygame.transform.flip(pygame.transform.scale(spritesheet.subsurface(pygame.Rect(posicao_x_do_corte + 42, posicao_y_do_corte, 42, tamanho_y)), (tamanho_x * 2.5, tamanho_y * 2.5)) , True, False))
+    lista_de_frames.append(pygame.transform.flip(pygame.transform.scale(spritesheet.subsurface(pygame.Rect(posicao_x_do_corte + 84, posicao_y_do_corte, 60, tamanho_y)), (tamanho_x * 2.5, tamanho_y * 2.5)) , True, False))
+    lista_de_frames.append(pygame.transform.flip(pygame.transform.scale(spritesheet.subsurface(pygame.Rect(posicao_x_do_corte + 144, posicao_y_do_corte, 60, tamanho_y)), (tamanho_x * 2.5, tamanho_y * 2.5)) , True, False))
+    lista_de_frames.append(pygame.transform.flip(pygame.transform.scale(spritesheet.subsurface(pygame.Rect(posicao_x_do_corte + 204, posicao_y_do_corte, 69, tamanho_y)), (tamanho_x * 2.5, tamanho_y * 2.5)), True, False) )
+    
+    
+    return lista_de_frames
+
+

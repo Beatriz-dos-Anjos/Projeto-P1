@@ -27,7 +27,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
                 rect.x + 165, rect.y, 80, 100)  # área de colisão
 
             # desenha a hitbox do ataque
-            pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
+            #pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
             # desenha a hit box do personagem inimigo
             posicao = pygame.Rect(posicao_oponente_x,
                                   posicao_oponente_y, 80, 180)
@@ -46,7 +46,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
 
             area_de_colisao = pygame.Rect(rect.x + 140, rect.y + 60, 80, 150)
 
-            pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
+            #pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
             posicao = pygame.Rect(posicao_oponente_x,
                                   posicao_oponente_y, 80, 180)
             tipo_de_ataque = 2  # vai servir para a animação, 2 == chute
@@ -56,7 +56,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
 
             musica_de_soco.play()
         # ATAQUE ESPECIAL
-        if keys[pygame.K_t] and barra_de_vida_player.can_use_special() == True:
+        """if keys[pygame.K_t] and barra_de_vida_player.can_use_special() == True:
 
             attacking_damage = 100
             barra_de_vida_player.loose_special()
@@ -73,7 +73,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
                     attacking_damage, barra_de_vida_oponente)
 
         if keys[pygame.K_f]:
-            defendendo_ou_nao = True
+            defendendo_ou_nao = True"""
 
     elif player == 2:  # COMANDOS DE ATAQUE PARA O PLAYER 2
 
@@ -86,7 +86,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
             area_de_colisao = pygame.Rect(
                 rect.x, rect.y, -80, 100)  # área de colisão
 
-            pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
+            #pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
             posicao = pygame.Rect(posicao_oponente_x,
                                   posicao_oponente_y, 80, 180)
             tipo_de_ataque = 1  # vai servir para a animação, 1 == Soco
@@ -103,7 +103,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
 
             area_de_colisao = pygame.Rect(rect.x - 140, rect.y + 60, 80, 150)
 
-            pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
+            #pygame.draw.rect(surface, (0, 255, 0), area_de_colisao)
             posicao = pygame.Rect(posicao_oponente_x,
                                   posicao_oponente_y, 80, 180)
             tipo_de_ataque = 2  # vai servir para a animação, 2 == chute
@@ -113,7 +113,7 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
 
             musica_de_soco.play()
         # ATAQUE ESPECIAL
-        if keys[pygame.K_m] and barra_de_vida_player.can_use_special() == True:
+        """if keys[pygame.K_m] and barra_de_vida_player.can_use_special() == True:
 
             attacking_damage = 33
             barra_de_vida_player.loose_special()
@@ -127,6 +127,6 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
             tipo_de_ataque = 3  # vai servir para a animação, 3 == especial
 
             colisao(area_de_colisao, posicao,
-                    attacking_damage, barra_de_vida_oponente)
+                    attacking_damage, barra_de_vida_oponente)"""
 
     return attacked_or_not, tipo_de_ataque, defendendo_ou_nao

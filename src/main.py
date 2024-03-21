@@ -12,8 +12,7 @@ pygame.init()
 
 # musica de fundo
 pygame.mixer.music.set_volume(0.2)
-musica_de_fundo = pygame.mixer.music.load(
-    'assets/images/sounds/ReadyForIt.mp3')
+musica_de_fundo = pygame.mixer.music.load('assets/images/sounds/ReadyForIt.mp3')
 
 # dimensões cenário
 largura = 1000
@@ -212,6 +211,8 @@ while True:
                 pygame.quit()
                 exit()
     elif cena == 'kanye_wins':
+        som_de_vitoria_kanye = pygame.mixer.Sound('assets/images/sounds/victory_songs/kanye_sound.mp3')
+        som_de_vitoria_kanye.play()
         tela_final = pygame.image.load(
                 'assets/images/background/end/kanye.png').convert()
         tela_end = pygame.transform.scale(

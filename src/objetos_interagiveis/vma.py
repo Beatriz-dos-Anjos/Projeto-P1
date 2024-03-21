@@ -8,11 +8,11 @@ class Vma():
       self.image_raw =  pygame.image.load('assets/images/objetos_interagiveis/vmaprincipal.png') 
       self.default_scale= (75,80)
       self.image = pygame.transform.scale(self.image_raw, self.default_scale)
-      self.velocidade = 8
+      self.velocidade = 5
 
    def colisao (self,rect, player_rect, barra_de_vida):
         if rect.colliderect(player_rect):
-            barra_de_vida.loose_health(-10)
+            barra_de_vida.loose_health(-5)
             self.lancar_objeto()
 
    def movimento_vertical (self,vel_y):

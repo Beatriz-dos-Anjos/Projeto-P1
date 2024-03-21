@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-from utilities.animacoes import formar_lista_animacao
+from utilities.animacoes import formar_lista_animacao, forrmar_chute_taylor
 import sys
 
 # A imagem vai ser repartidada em imagens menores, no caso temos uma spritesheet com todos os movimentos
@@ -61,12 +61,12 @@ punch = formar_lista_animacao(full_spritesheet_taylor, punch_number_frames, punc
 
 # Para as sprites do kick:
 kick_number_frames = 5 # quantidade de frames
-kick_size_of_frame_x = 54.04  # tamanho horizontal de cada um dos frames
-kick_size_of_frame_y = 116.2  # tamanho vertical de cada um dos frames
-kick_posicao_x_do_corte = 0 # onde o corte vai começar de X
-kick_posicao_y_do_corte = 581 # onde o corte vai começar de Y
+kick_size_of_frame_x = 54.6  # tamanho horizontal de cada um dos frames
+kick_size_of_frame_y = 108  # tamanho vertical de cada um dos frames
+kick_posicao_x_do_corte = 13 # onde o corte vai começar de X
+kick_posicao_y_do_corte = 433 # onde o corte vai começar de Y
 
-kick = formar_lista_animacao(full_spritesheet_taylor, kick_number_frames, kick_size_of_frame_x, kick_size_of_frame_y, kick_posicao_x_do_corte, kick_posicao_y_do_corte, 2)
+kick = forrmar_chute_taylor(full_spritesheet_taylor, kick_number_frames, kick_size_of_frame_x, kick_size_of_frame_y, kick_posicao_x_do_corte, kick_posicao_y_do_corte, 2)
 
 # Para as sprites de animação de derrota:
 derrota_number_frames = 6 # quantidade de frames

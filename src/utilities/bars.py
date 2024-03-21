@@ -30,7 +30,6 @@ class Barra_de_vida():
 
         
         if (self.life<50 and self.life>30) or self.vma_displayed:
-            self.grammy.velocidade = 8
             self.vma.draw(rect_player_1, rect_player_2, barra_player_1, barra_player_2)
             self.vma_displayed = True
 

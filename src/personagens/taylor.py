@@ -12,7 +12,7 @@ class Taylor_fighter():
     def __init__(self, player, x, y):
         self.player = player
         self.rect = pygame.Rect(x, y, 145, 260)
-        self.animations = [idle, walk, punch, kick, derrota]
+        self.animations = [idle, walk, punch, derrota, kick]
         self.current_animation = 0
         self.current_animation_frame = 0
         self.is_attacking_or_jumping = False

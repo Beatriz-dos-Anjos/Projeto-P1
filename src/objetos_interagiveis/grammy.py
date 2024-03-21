@@ -12,7 +12,7 @@ class Grammy():
 
    def colisao (self,rect, player_rect, barra_de_vida):
         if rect.colliderect(player_rect):
-            barra_de_vida.loose_health(-10)
+            barra_de_vida.loose_health(-5)
             self.lancar_objeto()
 
    def movimento_vertical (self,vel_y):
