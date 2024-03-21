@@ -12,23 +12,30 @@ def colisao(hitbox, player, golpe, barra_de_vida):
 
 
 # define a função de movimento para ambos os personagens
-def move(rect, player, facing_left, ground, speed, largura, altura):
+def move(rect, player, facing_left, ground, speed, largura, altura, inimigo):
     gravidade = 2
+
+    colliding_right_or_left = is_colliding_left(rect, inimigo) 
+    # None = não colide
+    # True = colide pela esquerda
+    # False = colide pela direita
 
     # para registrar a tecla que for pressionada
     keys = pygame.key.get_pressed()
 
     if player == 1:  # determina a movimentação para o player 1 (o player que começa na esquerda)
 
-        if keys[pygame.K_a]:  # verifica se a tecla pressionada foi A, se for o player 1 movimenta para a esquerda e atualiza a váriavel que indica o sentido do personagem
-            facing_left = True  
-            rect.x -= 10  
+        if keys[pygame.K_a] and (colliding_right_or_left == None or colliding_right_or_left == False):  # verifica se a tecla pressionada foi A, se for o player 1 movimenta para a esquerda e atualiza a váriavel que indica o sentido do personagem
+            facing_left = True 
+
+            rect.x -= 10
 
         # mesma coisa que a condição acima, mas para verificar se o personagem está andando para a direita
-        if keys[pygame.K_d]:
+        if keys[pygame.K_d] and (colliding_right_or_left == None or colliding_right_or_left == True):
             facing_left = False
-            rect.x += 10
 
+            rect.x += 10
+            
         # pulo do personagem: o personagem só pula se ele estiver no chão
         if keys[pygame.K_w] and ground == True:
             speed = - 20
@@ -37,12 +44,14 @@ def move(rect, player, facing_left, ground, speed, largura, altura):
 
     elif player == 2:  # mesmas condições para movimentação do personagem, mas agora para o player 2
        
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] and (colliding_right_or_left == None or colliding_right_or_left == False):
             facing_left = True
+            
             rect.x -= 10
 
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT] and (colliding_right_or_left == None or colliding_right_or_left == True):
             facing_left = False
+
             rect.x += 10
 
         if keys[pygame.K_UP] and ground == True:
@@ -71,7 +80,7 @@ def move(rect, player, facing_left, ground, speed, largura, altura):
     return facing_left, ground, speed
 
 
-def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente):
+def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_oponente_y, barra_de_vida_oponente, barra_de_vida_player):
         attacking_damage = 0
         last_attack_time = 0
         
@@ -115,10 +124,11 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
             # ATAQUE ESPECIAL
-            if keys[pygame.K_t]:
+            if keys[pygame.K_t] and barra_de_vida_player.can_use_special() == True:
 
                 attacking_damage = 33
                 last_attack_time = pygame.time.get_ticks() 
+                barra_de_vida_player.loose_special()
                 
                 if facing_left == False:
                     area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
@@ -169,10 +179,12 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
             # ATAQUE ESPECIAL
-            if keys[pygame.K_m]:
+            if keys[pygame.K_m] and barra_de_vida_player.can_use_special() == True:
 
                 attacking_damage = 33 
                 last_attack_time = pygame.time.get_ticks() 
+                barra_de_vida_player.loose_special()
+
                 
                 if facing_left == False:
                     area_de_colisao = pygame.Rect(rect.x + 80, rect.y, 80, 180)
@@ -186,3 +198,15 @@ def combate(rect, player, surface, facing_left, posicao_oponente_x, posicao_opon
                 colisao(area_de_colisao, posicao, attacking_damage, barra_de_vida_oponente)
 
         return last_attack_time
+
+
+def is_colliding_left(hit_box_player, hit_box_opponent):
+
+    if hit_box_opponent.colliderect(hit_box_player): # se os oponentes estiverem colidindo 
+
+        if hit_box_player.x < hit_box_opponent.x: # se a posição x do persongem for menor que a posição x do oponente, a colisão está acontecendo à direita do personagem
+            return False
+        
+        return True # se a posição x do personagem for maior que a posição x do oponente, a colisão está acontecendo à direita
+    
+    return None
