@@ -88,8 +88,35 @@ class Start(pygame.sprite.Sprite):
         self.image = self.sprites[int(self.atual)]
         self.image = pygame.transform.scale(self.image, (219*2,116*2))
 
-sprites = pygame.sprite.Group() 
+class End(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.sprites = []
+        self.sprites.append(pygame.image.load('assets/images/background/end/1.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/2.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/3.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/4.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/5.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/6.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/7.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/8.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/9.png'))
+        self.sprites.append(pygame.image.load('assets/images/background/end/10.png'))        
 
+        self.atual = 0
+        self.image = self.sprites[self.atual]
+        self.image = pygame.transform.scale(self.image, (219*2 ,116*2))
+        self.rect = self.image.get_rect()
+        self.rect.topleft = 280, 430
+
+    def update(self):
+        self.atual = self.atual + 0.2
+        if self.atual >= len(self.sprites):
+            self.atual = 0
+        self.image = self.sprites[int(self.atual)]
+        self.image = pygame.transform.scale(self.image, (219*2,116*2))
+        
+sprites = pygame.sprite.Group() 
 
 
 
