@@ -71,9 +71,9 @@ def combate(rect, player, surface, posicao_oponente_x, posicao_oponente_y, barra
 
             colisao(area_de_colisao, posicao,
                     attacking_damage, barra_de_vida_oponente)
-
+"""
         if keys[pygame.K_f]:
-            defendendo_ou_nao = True"""
+            defendendo_ou_nao = True
 
     elif player == 2:  # COMANDOS DE ATAQUE PARA O PLAYER 2
 
