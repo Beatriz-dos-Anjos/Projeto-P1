@@ -46,8 +46,8 @@ Arquitetura de pastas do projeto
 | [Antonio Carolino](link_do_git)                       |  Movimentação dos personagens e adicionou sons ao jogo                                                                         |
 | [Beatriz Dos anjos](link_do_git)                                | Orientação dos objetos, selecionou as sprites da Taylor e selecionou as músicas                                                                                      |
 | [Luiza Trigueiro](link_do_git)                        |       Orientação dos objetos, Parte visual do background, Readme, Parte visual e técnica (dimensões) da arena e Colisão objetos caindo e personagens
-                                                                               |
-| [Maria Clara Gomes](link_do_git)                            |  Parte visual do background, Readme, slides, Parte visual e técnica (dimensões) da arena                                                                                       |
+                                                                               
+| [Maria Clara Gomes](link_do_git)                            |  Parte visual do background, Readme, slides, Parte visual e técnica (dimensões) da arena |                                                                                       |
 | [Paulo Vieira](link_do_git)                           |                                                                                        |
 | [Sérgio Lira](link_do_git)                            |                                                                                        |
 
