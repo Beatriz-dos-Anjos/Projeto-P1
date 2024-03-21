@@ -18,7 +18,6 @@ class Barra_de_vida():
         self.vma = Vma(self.surface)
         self.jordan_2 = Jordan(self.surface)
         self.grammy_2 = Grammy(self.surface)
-        self.special_attack = 0
         self.time_to_explode = 60000
         self.grammy_displayed = False
         self.vma_displayed = False

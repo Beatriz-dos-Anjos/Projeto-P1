@@ -261,12 +261,11 @@ while True:
             pygame.mixer.music.play(-1)
             tela_do_jogo.battlegorund_print()
             while game == True:
-              
-                Taylor_Swift_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
-                Kanye_West_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
                 relogio.tick(FPS)
                 # bg()
                 tela_do_jogo.battlegorund_print()
+                Taylor_Swift_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
+                Kanye_West_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
                 game = alive_or_die(Taylor_Swift, Taylor_Swift_Bars,
                                     Kanye_West, Kanye_West_Bars)
                 # Interação de Combate
