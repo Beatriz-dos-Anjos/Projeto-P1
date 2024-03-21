@@ -4,9 +4,6 @@ from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
 from utilities.bars import Barra_de_vida
-from utilities.grammy import Grammy
-from utilities.vma import Vma
-from utilities.jordan import Jordan
 
 
 pygame.init()
