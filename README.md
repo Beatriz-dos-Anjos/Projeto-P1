@@ -131,3 +131,4 @@ Os nossos **erros** foram: Tentar criar as sprites do zero durante boa parte do 
 #### 👤Seleção de personagem
 ![Captura de tela do jogo](./assets/images/galeria_do_jogo/Captura%20de%20tela%202024-03-20%20193033.png)
 
+# [Vem ver nossa apresentação!](https://www.canva.com/design/DAF_sR2AzFc/-Tim_JI4ib-LocTNZ-nzWg/edit?utm_content=DAF_sR2AzFc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
