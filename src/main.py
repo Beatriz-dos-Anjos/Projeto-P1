@@ -4,6 +4,7 @@ from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
 from utilities.bars import Barra_de_vida
+
 from utilities.telainicial import *
 from utilities.bars import Barra_de_vida
 
@@ -30,6 +31,7 @@ FPS = 45
 
 # acrescentando o background
 fundo = pygame.image.load('assets/images/backgrounds/cenario2.jpeg')
+
 
 # variaveis seleçao perso
 var_selecao = pygame.image.load(
@@ -161,11 +163,12 @@ Kanye_West = Kanye_fighter(1, 200, 310)
 Taylor_Swift_Bars = Barra_de_vida(2, tela)
 Kanye_West_Bars = Barra_de_vida(1, tela)
 
-#
+
+
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
 
-# sprites da tela inicial
+
 logo = Logo()
 start = Start()
 end = End()
@@ -264,6 +267,8 @@ while True:
             relogio.tick(FPS)
             # bg()
             tela_do_jogo.battlegorund_print()
+            Taylor_Swift_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
+            Kanye_West_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
             game = alive_or_die(Kanye_West, Kanye_West_Bars,
                                 Taylor_Swift, Taylor_Swift_Bars)
             if game == Kanye_West:
@@ -335,6 +340,7 @@ while True:
                     game = True
         
         tela.blit(tela_end, (0, 0))
+
 
 
     elif cena == 'taylor_wins':
