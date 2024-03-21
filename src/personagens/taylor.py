@@ -46,7 +46,6 @@ class Taylor_fighter():
         return self.rect
 
     def draw(self, surface):
-
         self.atualizar_animacao()
         surface.blit(self.animations[self.current_animation]
                      [self.current_animation_frame], self.rect.topleft)

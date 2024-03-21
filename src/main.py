@@ -4,6 +4,7 @@ from sys import exit
 from personagens.taylor import Taylor_fighter
 from personagens.kanye import Kanye_fighter
 from utilities.bars import Barra_de_vida
+
 from utilities.telainicial import *
 
 
@@ -29,7 +30,9 @@ relogio = pygame.time.Clock()
 FPS = 45
 
 # acrescentando o background
+
 fundo = pygame.image.load('assets/images/backgrounds/cenario2.jpeg')
+
 
 #variaveis seleçao perso
 var_selecao = pygame.image.load('assets/images/background/selecao/antes_de_escolher.png').convert()
@@ -159,7 +162,7 @@ Kanye_West_Bars = Barra_de_vida(1, tela)
 
 #remover linha pois vai ser definido na tela de selaçao
     
-#
+
 localizacao_kanye_x, localizacao_kanye_y = 0, 0
 localizacao_taylor_x, localizacao_taylor_y = 0, 0
 
@@ -258,6 +261,9 @@ while True:
             pygame.mixer.music.play(-1)
             tela_do_jogo.battlegorund_print()
             while game == True:
+              
+                Taylor_Swift_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
+                Kanye_West_Bars.objetos(Taylor_Swift.rect, Kanye_West.rect, Taylor_Swift_Bars, Kanye_West_Bars) # encaixar dentro de combate
                 relogio.tick(FPS)
                 # bg()
                 tela_do_jogo.battlegorund_print()
@@ -291,10 +297,8 @@ while True:
 
                 pygame.display.update()  # ESTUDAR MUDAR PARA O FLIP
 
-    #
-    #
+  
 
- 
 
     for event in pygame.event.get():
         if event.type == QUIT:

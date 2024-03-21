@@ -53,7 +53,6 @@ class Kanye_fighter():
     
 
     def draw(self, surface):
-
         self.atualizar_animacao()
         if self.is_defending == True:
             surface.blit(self.animation_defending, self.rect.topleft)
@@ -154,3 +153,4 @@ class Kanye_fighter():
 
 
                 
+

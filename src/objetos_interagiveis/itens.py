@@ -69,21 +69,24 @@ while True:
 
         if objeto_lancado:
             if prox_objeto == 1:
-                tela.blit (grammy_oficial, (x_ret_1, y_retangulo_1))#.convert_alpha()
+                grammy_oficial = pygame.image.load('grammy_oficial.png').convert_alpha()
+                tela.blit (grammy_oficial, (x_ret_1, y_retangulo_1))
                 y_retangulo_1 += vel_y
                 hitbox_obj_1=pygame.draw.rect(tela,(0,255,0),(x_ret_1,y_retangulo_1,10,20))
                 if y_retangulo_1 > ALTURA:
                     objeto_lancado = False
                     esperando_intervalo = True
             elif prox_objeto == 2:
-                tela.blit(vma_oficial, (x_ret_2, y_retangulo_2))#.convert_alpha()
+                vma_oficial = pygame.image.load('vma_oficial.png').convert_alpha()
+                tela.blit(vma_oficial, (x_ret_2, y_retangulo_2))
                 y_retangulo_2 += vel_y
                 hitbox_obj_2=pygame.draw.rect(tela,(0,255,0),(x_ret_2,y_retangulo_2,10,20))
                 if y_retangulo_2 > ALTURA:
                     objeto_lancado = False
                     esperando_intervalo = True
             elif prox_objeto == 3:
-                tela.blit(jordan_oficial,(x_ret_3, y_retangulo_3))#.convert_alpha()
+                jordan_oficial = pygame.image.load('jordan_oficial.png').convert_alpha()
+                tela.blit(jordan_oficial,(x_ret_3, y_retangulo_3))
                 y_retangulo_3 += vel_y
                 hitbox_obj_3=pygame.draw.rect(tela,(0,255,0),(x_ret_3,y_retangulo_3,10,20))
                 if y_retangulo_3 > ALTURA:
